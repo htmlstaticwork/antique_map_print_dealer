@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antique Map & Print Dealer | Home</title>
+    <meta name="description" content="Discover rare antique maps, historical prints, and expert framing services at Antique Map & Print Dealer. High-resolution gallery and professional appraisal.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <i class="bi bi-compass me-2 fs-2"></i>
+                    <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                </a>
+                
+                <div class="d-flex align-items-center order-lg-3 gap-2">
+                    <button class="theme-toggle-btn" id="rtl-toggle" title="Toggle RTL">
+                        <span class="rtl-label" style="font-size: 14px; font-weight: bold;">RTL</span>
+                    </button>
+                    <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <div class="d-none d-sm-flex gap-2 mx-2">
+                        <a href="login.html" class="btn btn-primary text-center px-0" style="width: 110px;">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary text-center px-0" style="width: 110px;">Sign Up</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header pb-0">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-compass me-2 fs-2"></i>
+                <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column mb-4">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-grid gap-2">
+                <a href="login.html" class="btn btn-primary">Login</a>
+                <a href="register.html" class="btn btn-outline-primary">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero d-flex align-items-center text-center" style="background-image: url('file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/hero_antique_map_1774956533190.png'); background-size: cover; background-position: center; min-height: 80vh;">
+            <div class="container">
+                <div class="row hero-content justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="display-3 mb-4 fw-bold shadow-sm">Timeless Treasures, <br><span class="text-warning">Meticulously Preserved.</span></h1>
+                        <p class="lead mb-5 fs-4 fw-light">Explore the world as it was. Authentic antique maps and rare historical prints for the discerning collector.</p>
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a href="index.html" class="btn btn-primary btn-lg px-5">Explore Gallery</a>
+                            <a href="contact.html" class="btn btn-outline-light btn-lg px-5 fw-bold">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="row g-4 text-center">
+                    <div class="col-md-3">
+                        <h3 class="display-5 fw-bold text-primary">5k+</h3>
+                        <p class="text-muted text-uppercase small ls-2">Rare Maps</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 class="display-5 fw-bold text-primary">20+</h3>
+                        <p class="text-muted text-uppercase small ls-2">Years Experience</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 class="display-5 fw-bold text-primary">1k+</h3>
+                        <p class="text-muted text-uppercase small ls-2">Happy Clients</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h3 class="display-5 fw-bold text-primary">15+</h3>
+                        <p class="text-muted text-uppercase small ls-2">Countries Served</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Shop / Acquisitions Section -->
+        <section class="py-5" id="shop">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold">Curated Masterpieces</h2>
+                    <p class="text-muted fs-5">Authentic, museum-quality antique maps available for acquisition.</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Product 1 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
+                            <div class="position-relative overflow-hidden">
+                                <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 z-3">Rare Origin</span>
+                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/celestial_star_map_1774956552665.png" class="card-img-top zoom-on-hover" alt="Celestial Map" style="height: 300px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1660 &bull; Original Engraving</div>
+                                <h5 class="card-title fw-bold">Harmonia Macrocosmica</h5>
+                                <p class="card-text text-muted small flex-grow-1">A breathtaking celestial masterpiece by Andreas Cellarius, detailing the Ptolemaic universe. This map bears exquisite original hand-coloring from the Dutch Golden Age.</p>
+                                <h4 class="text-primary fw-bold mb-3">$4,500</h4>
+                                <div class="mb-4 bg-light p-3 border rounded">
+                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
+                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
+                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
+                                        <option value="gilded">Gilded Wood (Museum Glass) - +$350</option>
+                                        <option value="walnut">Solid Walnut (UV Acrylic) - +$250</option>
+                                    </select>
+                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
+                            <div class="position-relative overflow-hidden">
+                                <span class="badge bg-primary position-absolute top-0 start-0 m-3 z-3">New Arrival</span>
+                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/vintage_nautical_chart_1774956567918.png" class="card-img-top zoom-on-hover" alt="Nautical Chart" style="height: 300px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1715 &bull; Hand-Colored</div>
+                                <h5 class="card-title fw-bold">Caribbean Nautical Chart</h5>
+                                <p class="card-text text-muted small flex-grow-1">An exceptionally detailed chart of the West Indies from the era of piracy. Features ornate compass roses and rhumb lines used for maritime navigation.</p>
+                                <h4 class="text-primary fw-bold mb-3">$2,800</h4>
+                                <div class="mb-4 bg-light p-3 border rounded">
+                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
+                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
+                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
+                                        <option value="mahogany">Mahogany Profile (Museum Glass) - +$300</option>
+                                        <option value="distressed">Distressed Oak (UV Acrylic) - +$220</option>
+                                    </select>
+                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
+                            <div class="position-relative overflow-hidden">
+                                <span class="badge bg-dark position-absolute top-0 start-0 m-3 z-3">Staff Pick</span>
+                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/antique_city_plan_1774956586519.png" class="card-img-top zoom-on-hover" alt="City Plan" style="height: 300px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1851 &bull; Steel Engraving</div>
+                                <h5 class="card-title fw-bold">Victorian Map of London</h5>
+                                <p class="card-text text-muted small flex-grow-1">A highly detailed, folding street map of London showcasing the city during the Great Exhibition. Rare pristine condition without centerfold tears.</p>
+                                <h4 class="text-primary fw-bold mb-3">$1,250</h4>
+                                <div class="mb-4 bg-light p-3 border rounded">
+                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
+                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
+                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
+                                        <option value="ebony">Ebony Flat (Museum Glass) - +$275</option>
+                                        <option value="silver">Silver Gilt (UV Acrylic) - +$250</option>
+                                    </select>
+                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="services.html" class="btn btn-outline-primary btn-lg px-5 fw-bold">View Full Acquisition Catalogue</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Services Preview -->
+        <section class="py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-5 mb-4">Professional Preservation Services</h2>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-warning me-3 fs-4"></i>
+                                <div>
+                                    <h5>Archival Restoration</h5>
+                                    <p class="text-secondary small">Removing foxing, acidic stains, and professional tear repair.</p>
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-warning me-3 fs-4"></i>
+                                <div>
+                                    <h5>Custom Museum Framing</h5>
+                                    <p class="text-secondary small">Choose from hand-gilded, mahogany, or walnut profiles. We use exclusively UV-protective museum glass, acid-free mats, and reversible mounting techniques to ensure lifetime archival preservation of your investment.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="services.html" class="btn btn-warning btn-lg px-4 fw-bold mb-4 mb-lg-0">Explore Our Workshop</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative">
+                             <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/custom_framing_1774952897974.png" class="img-fluid rounded shadow-lg" alt="Custom Archival Framing">
+                             <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-3 m-4 rounded shadow d-none d-md-block">
+                                 <h6 class="fw-bold mb-0">Conservation Grade</h6>
+                                 <p class="small mb-0 mt-1">100% Acid-Free Materials</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card p-5 bg-primary text-white text-center border-0">
+                            <h2 class="mb-3">Join the Connoisseur's List</h2>
+                            <p class="mb-4 text-warning">Receive early access to new acquisitions and historical insights.</p>
+                            <form class="row g-2 justify-content-center">
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control form-control-lg border-0" placeholder="Your email address">
+                                </div>
+                                <div class="col-md-auto">
+                                    <button type="submit" class="btn btn-warning btn-lg px-4 fw-bold">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-3" href="index.html">
+                        <i class="bi bi-compass me-2 fs-2"></i>
+                        <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                    </a>
+                    <p class="text-secondary small mb-4">Official dealer of rare cartography and historical prints since 1985. We specialize in museum-quality preservation and authentication.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="fs-4"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4 fw-bold">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html">Home1</a></li>
+                        <li class="mb-2"><a href="home-2.html">Home2</a></li>
+                        <li class="mb-2"><a href="about.html">About</a></li>
+                        <li class="mb-2"><a href="services.html">Services</a></li>
+                        <li class="mb-2"><a href="blog.html">Blog</a></li>
+                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5 class="mb-4 fw-bold">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html">Contact Support</a></li>
+                        <li class="mb-2"><a href="#">Shipping Info</a></li>
+                        <li class="mb-2"><a href="404.html">Return Policy</a></li>
+                        <li class="mb-2"><a href="contact.html">Visit Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5 class="mb-4 fw-bold">Our Gallery</h5>
+                    <p class="text-secondary small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 1245 Heritage Hall, Knightsbridge, London, UK</p>
+                    <p class="text-secondary small mb-2"><i class="bi bi-envelope me-2 text-warning"></i> curator@antiquemaps.com</p>
+                    <p class="text-secondary small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +44 20 7123 4567</p>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="row align-items-center py-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small text-secondary">&copy; 2026 Antique Map & Print Dealer. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0 small text-secondary">
+                        <li class="list-inline-item"><a href="#" class="ms-3">Privacy</a></li>
+                        <li class="list-inline-item"><a href="#" class="ms-3">Terms</a></li>
+                        <li class="list-inline-item"><a href="#" class="ms-3">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <a href="#" id="back-to-top" class="btn btn-warning rounded-circle py-3 px-3 shadow">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
