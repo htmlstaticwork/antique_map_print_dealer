@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANtique mapping</title>
+    <title>About | ANtique mapping</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -52,8 +52,8 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -65,9 +65,9 @@
 
     <!-- Mobile Menu Offcanvas -->
     <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header pb-0">
+        <div class="offcanvas-header pb-0 border-bottom border-secondary border-opacity-25 py-3">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
+                <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
                 <span class="text-white">ANtique mapping</span>
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
@@ -76,50 +76,8 @@
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <div class="d-none d-lg-flex gap-2">
-                        <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary px-3 py-2"
-                            style="font-size: 0.75rem;">Join Client List</a>
-                    </div>
-                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#mobileMenu">
-                        <i class="bi bi-list fs-2 text-white"></i>
-                    </button>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header pb-0">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
-                <span class="text-white">ANtique mapping</span>
-            </a>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="nav flex-column mb-4 mt-4">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -128,21 +86,21 @@
     </div>
 
     <main>
-        <section class="hero-about d-flex align-items-center mt-5">
-            <div class="container text-center">
+        <section class="hero-about d-flex align-items-center">
+            <div class="container text-center hero-content">
                 <h1 class="display-1 fw-bold text-uppercase" style="color: var(--accent-color);">Our Heritage.<br><span class="fw-light text-white">Our Science.</span></h1>
-                <p class="lead col-lg-8 mx-auto mt-4 text-white opacity-75">Since 2008, Antique Protocol has merged the traditional connoisseurship of cartography with cutting-edge forensic science to protect the heritage of our history's most precious maps.</p>
+                <p class="lead col-lg-8 mx-auto mt-4 text-white opacity-75">Since 2008, Antique Protocol has merged the traditional connoisseurship of cartography with cutting-edge forensic science.</p>
             </div>
         </section>
 
         <section class="py-5 bg-white">
             <div class="container py-lg-5">
-                <div class="row align-items-center">
+                <div class="row align-items-center g-5">
                     <div class="col-lg-6 mb-5 mb-lg-0">
                         <div class="vintage-border">
-                            <h2 class="display-4 mb-4">The Forensic Laboratory.</h2>
-                            <p class="text-secondary mb-4">Located in the heart of Mayfair, our facility is a dedicated sanctuary for historical investigation. Every map entering our care undergoes a systematic audit process that is unrivaled in the private sector.</p>
-                            <p class="text-secondary">We serve world-class museums, corporate archives, and the most discerning private collectors, ensuring that every acquisition is a secure investment in human history.</p>
+                            <h2 class="display-4 mb-4 text-center text-lg-start">Four Decades of Excellence.</h2>
+                            <p class="text-secondary mb-4 text-center text-lg-start">Located in the heart of Mayfair, our facility is a dedicated sanctuary for historical investigation. Every map entering our care undergoes a systematic audit process.</p>
+                            <p class="text-secondary text-center text-lg-start">We serve world-class museums, corporate archives, and the most discerning private collectors.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 px-lg-5">
@@ -155,29 +113,28 @@
         <section class="py-5 bg-light">
             <div class="container py-lg-5">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold text-uppercase">Our Core Principles</h2>
-                    <div class="mx-auto bg-primary mb-4" style="height: 3px; width: 60px;"></div>
+                    <h2 class="display-5 fw-bold text-uppercase centered-title">Our Core Principles</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="p-4 bg-white shadow-sm h-100 text-center border-bottom border-primary border-3">
                             <i class="bi bi-shield-check fs-1 text-primary mb-3 d-block"></i>
                             <h4 class="fw-bold">Absolute Integrity</h4>
-                            <p class="text-secondary">We maintain an uncompromising commitment to the truth of provenance. If a document's history is clouded, we reveal it without hesitation.</p>
+                            <p class="text-secondary small">We maintain an uncompromising commitment to the truth of provenance.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white shadow-sm h-100 text-center border-bottom border-primary border-3">
                             <i class="bi bi-microscope fs-1 text-primary mb-3 d-block"></i>
                             <h4 class="fw-bold">Scientific Precision</h4>
-                            <p class="text-secondary">Using multi-spectral imaging and chemical analysis, we provide forensic certainty where others offer only opinions.</p>
+                            <p class="text-secondary small">Using multi-spectral imaging and chemical analysis, we provide forensic certainty.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="p-4 bg-white shadow-sm h-100 text-center border-bottom border-primary border-3">
                             <i class="bi bi-globe fs-1 text-primary mb-3 d-block"></i>
                             <h4 class="fw-bold">Global Stewardship</h4>
-                            <p class="text-secondary">We view ourselves as temporary guardians of humanity's geographic heritage, ensuring its survival for generations.</p>
+                            <p class="text-secondary small">We view ourselves as temporary guardians of humanity's geographic heritage.</p>
                         </div>
                     </div>
                 </div>
@@ -186,40 +143,28 @@
 
         <section class="py-5 bg-dark text-white">
             <div class="container py-lg-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-5 mb-5 mb-lg-0">
-                        <h2 class="display-4 text-uppercase mb-4" style="color: var(--accent-color);">Global Command.</h2>
-                        <p class="lead opacity-75 mb-4">Our network extends from the archival vaults of Europe to the private galleries of Tokyo and the tech hubs of Silicon Valley.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> London (Global HQ) – Mayfair District</li>
-                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> New York – Financial District Annex</li>
-                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> Tokyo – Chiyoda Preservation Lab</li>
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5 text-center text-lg-start">
+                        <h2 class="display-4 text-uppercase mb-4 centered-title d-lg-block text-center text-lg-start" style="color: var(--accent-color);">Global Command.</h2>
+                        <p class="lead opacity-75 mb-4 text-center text-lg-start">Our network extends from archival vaults to private labs.</p>
+                        <ul class="list-unstyled d-inline-block text-start">
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> London (Global HQ)</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> New York Branch</li>
+                            <li class="mb-3 d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary me-3"></i> Tokyo Preservation Lab</li>
                         </ul>
                     </div>
                     <div class="col-lg-7">
                         <div class="row g-3">
                             <div class="col-6">
-                                <div class="bg-secondary bg-opacity-25 p-5 rounded text-center border border-secondary">
-                                    <h3 class="display-4 fw-bold mb-0 text-primary">15k+</h3>
-                                    <p class="small text-uppercase mb-0 tracking-widest">Maps Audited</p>
+                                <div class="bg-secondary bg-opacity-25 p-4 rounded text-center border border-secondary shadow-sm">
+                                    <h3 class="fw-bold mb-0 text-primary">15k+</h3>
+                                    <p class="small text-uppercase mb-0 opacity-50">Audited</p>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="bg-secondary bg-opacity-25 p-5 rounded text-center border border-secondary">
-                                    <h3 class="display-4 fw-bold mb-0 text-primary">48</h3>
-                                    <p class="small text-uppercase mb-0 tracking-widest">Countries Served</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-secondary bg-opacity-25 p-5 rounded text-center border border-secondary">
-                                    <h3 class="display-4 fw-bold mb-0 text-primary">120</h3>
-                                    <p class="small text-uppercase mb-0 tracking-widest">Forensic Tools</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-secondary bg-opacity-25 p-5 rounded text-center border border-secondary">
-                                    <h3 class="display-4 fw-bold mb-0 text-primary">100%</h3>
-                                    <p class="small text-uppercase mb-0 tracking-widest">Accuracy Rate</p>
+                                <div class="bg-secondary bg-opacity-25 p-4 rounded text-center border border-secondary shadow-sm">
+                                    <h3 class="fw-bold mb-0 text-primary">48</h3>
+                                    <p class="small text-uppercase mb-0 opacity-50">Countries</p>
                                 </div>
                             </div>
                         </div>
@@ -231,13 +176,12 @@
         <section class="py-5 bg-white">
             <div class="container py-lg-5">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold text-uppercase">The Executive Board</h2>
-                    <p class="text-muted">Mastering the intersection of history and technology.</p>
+                    <h2 class="display-5 fw-bold text-uppercase centered-title">The Executive Board</h2>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-lg rounded-0 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" class="card-img-top rounded-0" alt="CEO">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm overflow-hidden h-100">
+                            <img src="assets/images/senior_curator.png" class="card-img-top" alt="CEO" style="height: 300px; object-fit: cover;">
                             <div class="card-body p-4 text-center">
                                 <h5 class="fw-bold mb-0">Dr. Alistair Vance</h5>
                                 <p class="text-primary small text-uppercase mb-3">Chief Cartographic Officer</p>
@@ -245,23 +189,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-lg rounded-0 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" class="card-img-top rounded-0" alt="Forensic Lead">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm overflow-hidden h-100">
+                            <img src="assets/images/forensic_specialist.png" class="card-img-top" alt="Forensic Lead" style="height: 300px; object-fit: cover;">
                             <div class="card-body p-4 text-center">
                                 <h5 class="fw-bold mb-0">Elena Rodriguez</h5>
                                 <p class="text-primary small text-uppercase mb-3">Head of Forensics</p>
                                 <p class="text-secondary small">Specialist in Raman Spectroscopy and pigment analysis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card border-0 shadow-lg rounded-0 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800" class="card-img-top rounded-0" alt="Restoration Lead">
-                            <div class="card-body p-4 text-center">
-                                <h5 class="fw-bold mb-0">Marcus Thorne</h5>
-                                <p class="text-primary small text-uppercase mb-3">Master Conservator</p>
-                                <p class="text-secondary small">30 years experience in paper restoration for national museums.</p>
                             </div>
                         </div>
                     </div>
@@ -270,11 +204,39 @@
         </section>
     </main>
 
-    <footer class="mt-auto bg-dark text-white py-5">
-        <div class="container text-center">
-            <p class="mb-0 opacity-50">&copy; 2026 Protocol Labs. All Private Collections Protected.</p>
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="container">
+            <div class="row g-5 mb-5 overflow-hidden">
+                <div class="col-lg-4 responsive-center">
+                    <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
+                        <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
+                        <span>ANtique mapping</span>
+                    </a>
+                    <p class="text-secondary small mb-4">Elite curators and forensic auditors since 2008.</p>
+                    <div class="d-flex footer-social-icons pt-2">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 offset-lg-1">
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="services.html" class="text-secondary small text-decoration-none link-hover">Services</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-secondary small text-decoration-none link-hover">Blog</a></li>
+                        <li class="mb-2"><a href="contact.html" class="btn btn-outline-primary btn-sm px-4 py-2 mt-3 text-uppercase w-100">Inquire Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="text-center py-3">
+                <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm.</p>
+            </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleTheme() {

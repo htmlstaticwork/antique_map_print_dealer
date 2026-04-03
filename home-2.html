@@ -21,7 +21,7 @@
 </head>
 <body>
 
-        <!-- Header -->
+    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
@@ -52,9 +52,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -66,9 +66,9 @@
 
     <!-- Mobile Menu Offcanvas -->
     <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header pb-0">
+        <div class="offcanvas-header pb-0 border-bottom border-secondary border-opacity-25 py-3">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
+                <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
                 <span class="text-white">ANtique mapping</span>
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
@@ -76,9 +76,9 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -89,24 +89,27 @@
     <main>
         <!-- Elite Gallery Hero -->
         <section class="hero-2 d-flex align-items-center">
-            <div class="container hero-content text-center">
+            <div class="container hero-content text-center py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="display-2 font-serif text-uppercase mb-4">Antique mapping <br><span class="text-primary">Exhibitions.</span></h1>
-                        <p class="lead text-white opacity-75 mb-5 fs-4 col-lg-8 mx-auto">Exclusive access to the world's most guarded cartographic collections. Our private exhibitions are by invitation only, ensuring total discretion and security.</p>
+                        <h1 class="display-2 font-serif text-uppercase mb-4 text-white">Antique mapping <br><span class="text-primary">Exhibitions.</span></h1>
+                        <p class="lead text-white opacity-100 mb-5 fs-4 col-lg-8 mx-auto">Exclusive access to the world's most guarded collections. Our private exhibitions are by invitation only.</p>
                         <a href="#exhibits" class="btn btn-primary px-5 py-3">Explore Private Exhibits</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Current Exhibitions Matrix -->
+        <!-- Current Exhibitions Matrix (Curated Gallery) -->
         <section id="exhibits" class="py-5 bg-dark">
             <div class="container py-lg-5">
-                <div class="row g-4">
+                <div class="text-center mb-5">
+                    <h2 class="display-4 fw-bold text-uppercase centered-title">Curated Gallery.</h2>
+                </div>
+                <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-dark border-secondary h-100 product-card">
-                            <img src="assets/images/matrix_botanical_jpg_1774976969725.jpg" class="card-img-top opacity-75" alt="Botanical Exhibit">
+                            <img src="assets/images/matrix_botanical_jpg_1774976969725.jpg" class="card-img-top opacity-100" alt="Botanical Exhibit" style="height: 300px; object-fit: cover;">
                             <div class="card-body p-4 text-start">
                                 <h4 class="fw-bold text-uppercase mb-3">Botanical Toxins</h4>
                                 <p class="text-secondary small mb-4">Historical studies of medicinal and lethal plants by 18th-century forensic botanists.</p>
@@ -116,17 +119,17 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-dark border-secondary h-100 product-card">
-                            <img src="assets/images/vault_map_hero_jpg_1774976949861.jpg" class="card-img-top opacity-75" alt="World Map Exhibit">
+                            <img src="assets/images/vault_map_hero_jpg_1774976949861.jpg" class="card-img-top opacity-100" alt="World Map Exhibit" style="height: 300px; object-fit: cover;">
                             <div class="card-body p-4 text-start">
                                 <h4 class="fw-bold text-uppercase mb-3">Imperial Cartography</h4>
-                                <p class="text-secondary small mb-4">Unmasking the political boundaries of lost empires through high-resolution forensic auditing.</p>
+                                <p class="text-secondary small mb-4">Unmasking political boundaries through forensic auditing.</p>
                                 <a href="services.html" class="btn btn-outline-primary btn-sm w-100">Access Case Detail</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="card bg-dark border-secondary h-100 product-card">
-                            <img src="assets/images/forensic_nautical_jpg_1774976991789.jpg" class="card-img-top opacity-75" alt="Nautical Exhibit">
+                            <img src="assets/images/forensic_nautical_jpg_1774976991789.jpg" class="card-img-top opacity-100" alt="Nautical Exhibit" style="height: 300px; object-fit: cover;">
                             <div class="card-body p-4 text-start">
                                 <h4 class="fw-bold text-uppercase mb-3">Nautical Intelligence</h4>
                                 <p class="text-secondary small mb-4">Charting pirate routes and hidden maritime assets in the Age of Sail.</p>
@@ -143,23 +146,22 @@
             <div class="container py-lg-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <img src="assets/images/antique_vault.png" class="img-fluid shadow-lg rounded" alt="Elite Archive Vault">
+                        <img src="assets/images/vault_map_hero_jpg_1774976949861.jpg" class="img-fluid shadow-lg rounded" alt="Elite Archive Vault">
                     </div>
                     <div class="col-lg-6">
                         <div class="p-lg-5 text-start my-auto">
                             <h2 class="display-3 fw-bold mb-4">The Private Vault.</h2>
                             <p class="lead mb-4 text-primary text-uppercase ls-2">Elite Historical Security.</p>
-                            <p class="mb-5 opacity-75">Your heritage, secured in reinforced high-security environments. We provide climate-controlled, oxygen-depleted storage for the world's rarest cartographic documents.</p>
+                            <p class="mb-5 opacity-75">Your heritage, secured in reinforced high-security environments. We provide climate-controlled, oxygen-depleted storage.</p>
                             
-                            <!-- Security Feature Grid -->
                             <div class="row g-4 mb-4">
                                 <div class="col-sm-6">
                                     <h6 class="fw-bold mb-1 text-uppercase text-white ls-2">Oxygen Depleted</h6>
-                                    <p class="small text-secondary">Zero-oxidation environment for paper preservation.</p>
+                                    <p class="small text-secondary">Zero-oxidation environment.</p>
                                 </div>
                                 <div class="col-sm-6">
                                     <h6 class="fw-bold mb-1 text-uppercase text-white ls-2">24/7 Monitoring</h6>
-                                    <p class="small text-secondary">Active surveillance by specialized historic security personnel.</p>
+                                    <p class="small text-secondary">Active surveillance by specialized personnel.</p>
                                 </div>
                             </div>
 
@@ -170,18 +172,18 @@
             </div>
         </section>
 
-        <!-- Private Consultations -->
+        <!-- Elite Advisory -->
         <section class="py-5 bg-white text-black">
             <div class="container py-lg-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6 order-lg-2">
-                        <img src="assets/images/collector_consultation.png" class="img-fluid shadow-lg rounded" alt="Expert Consultation">
+                        <img src="assets/images/forensic_specialist.png" class="img-fluid shadow-lg rounded" alt="Expert Consultation">
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div class="p-lg-5 text-start">
                             <h2 class="display-3 fw-bold mb-4">Elite Advisory.</h2>
                             <p class="lead mb-4 fw-bold">One-on-one expert guidance for the discerning collector.</p>
-                            <p class="mb-5 opacity-75">Whether you are starting a new collection or expanding a historical archive, our senior curators provide the market intelligence and forensic verification needed for high-stakes acquisitions.</p>
+                            <p class="mb-5 opacity-75">Whether starting a new collection or expanding an archive, our senior curators provide market intelligence.</p>
                             <a href="contact.html" class="btn btn-dark text-white px-5 py-3">Schedule a Consultation</a>
                         </div>
                     </div>
@@ -189,15 +191,15 @@
             </div>
         </section>
 
-        <!-- Provenance Investigation Protocol -->
+        <!-- The Provenance Audit System -->
         <section class="py-5 bg-white text-black border-top">
             <div class="container py-lg-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
                         <div class="p-lg-5 border-start border-primary border-4">
                             <h2 class="display-3 fw-bold mb-4">The Provenance Audit System.</h2>
-                            <p class="lead mb-4 fw-bold">Verification is our highest protocol. Every map we exhibit has undergone a multi-step investigation sequence.</p>
-                            <p class="mb-5 opacity-75">We utilize Primary Source Authentication, Spectral Pigment Verification, and Historical Context Matrixing to ensure zero-risk acquisitions.</p>
+                            <p class="lead mb-4 fw-bold">Verification is our highest protocol. Every map we exhibit has undergone investigation.</p>
+                            <p class="mb-5 opacity-75">We utilize Primary Source Authentication and Spectral Pigment Verification.</p>
                             <a href="about.html" class="btn btn-dark text-white px-5 py-3">Review Security Methodologies</a>
                         </div>
                     </div>
@@ -209,37 +211,44 @@
         </section>
     </main>
 
-    <!-- Footer (Consistent) -->
+    <!-- Footer -->
     <footer class="mt-auto">
         <div class="container">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4 text-start">
+            <div class="row g-5 mb-5 overflow-hidden">
+                <div class="col-lg-4 responsive-center">
                     <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
-                        <i class="bi bi-shield-lock me-2 fs-3"></i>
+                        <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
                         <span>ANtique mapping</span>
                     </a>
-                    <p class="text-secondary small">Elite curators of high-value cartographic assets. Operating under strict confidentiality protocols since 2008.</p>
+                    <p class="text-secondary small mb-4">Elite curators and forensic auditors of historical cartography since 2008.</p>
+                    <div class="d-flex footer-social-icons pt-2">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-4 col-lg-2 offset-lg-2">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Methodology</h6>
+                <div class="col-md-4 col-lg-2 offset-lg-1">
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">The Firm</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2 small"><a href="#" class="text-secondary text-decoration-none">Forensic Auditing</a></li>
-                        <li class="mb-2 small"><a href="#" class="text-secondary text-decoration-none">Value Protection</a></li>
-                        <li class="mb-2 small"><a href="#" class="text-secondary text-decoration-none">Provenance Check</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Home Protocol</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Services</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Our Methodology</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Asset Reports</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-lg-2">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Vault Portal</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2 small"><a href="login.html" class="text-secondary text-decoration-none">Secure Login</a></li>
-                        <li class="mb-2 small"><a href="contact.html" class="text-secondary text-decoration-none">Access Request</a></li>
-                        <li class="mb-2 small"><a href="#" class="text-secondary text-decoration-none">Asset Tracking</a></li>
-                    </ul>
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Newsletter</h6>
+                    <p class="text-secondary small mb-4">Subscribe for declassified reports.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="EMAIL_ADDR">
+                        <button class="btn btn-primary px-3 py-2" type="button"><i class="bi bi-send text-black"></i></button>
+                    </div>
                 </div>
             </div>
             <hr class="border-secondary opacity-25">
             <div class="text-center py-3">
-                <p class="mb-0 fs-tiny text-secondary opacity-50">&copy; 2026 Antique Protocol Firm. Private_Archive_Authorization_Locked.</p>
+                <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm. All assets secured.</p>
             </div>
         </div>
     </footer>

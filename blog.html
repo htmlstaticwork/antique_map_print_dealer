@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANtique mapping</title>
+    <title>Blog | ANtique mapping</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,25 +15,20 @@
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/images/blog_briefing_jpg_1774977455950.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 80vh;
-            color: #fff;
+            min-height: 60vh;
         }
         .briefing-card {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            border-radius: 0;
-            padding: 2rem;
+            padding: 2.5rem;
             position: relative;
+            transition: all 0.3s ease;
         }
-        .briefing-card::after {
-            content: 'DECLASSIFIED';
-            position: absolute;
-            top: 20px; right: 20px;
-            border: 3px solid var(--accent-color); color: var(--accent-color);
-            padding: 5px 15px; font-weight: 900; font-family: monospace;
-            transform: rotate(-15deg); opacity: 0.3;
+        .briefing-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-        .stamp-red { color: var(--accent-color); font-weight: bold; border-bottom: 2px solid var(--accent-color); display: inline-block; }
+        .stamp-red { color: var(--accent-color); font-weight: bold; border-bottom: 2px solid var(--accent-color); display: inline-block; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -68,9 +63,9 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                         <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
@@ -81,9 +76,9 @@
 
     <!-- Mobile Menu Offcanvas -->
     <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header pb-0">
+        <div class="offcanvas-header pb-0 border-bottom border-secondary border-opacity-25 py-3">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
+                <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
                 <span class="text-white">ANtique mapping</span>
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
@@ -92,51 +87,9 @@
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
                 <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <div class="d-none d-lg-flex gap-2">
-                        <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary px-3 py-2"
-                            style="font-size: 0.75rem;">Join Client List</a>
-                    </div>
-                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#mobileMenu">
-                        <i class="bi bi-list fs-2 text-white"></i>
-                    </button>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
-        <div class="offcanvas-header pb-0">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
-                <span class="text-white">ANtique mapping</span>
-            </a>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="nav flex-column mb-4 mt-4">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
@@ -145,77 +98,97 @@
 
     <main>
         <section class="hero-blog d-flex align-items-center mt-5">
-            <div class="container text-center">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h1 class="display-1 fw-bold text-uppercase" style="color: #fff;">Cartographic <br><span style="color: var(--accent-color);">Intelligence.</span></h1>
-                        <p class="lead col-lg-8 mx-auto mt-4 text-white opacity-75">Analysis of unearthed acquisitions and historical investigations. For eyes-only disclosure.</p>
+            <div class="container text-center hero-content">
+                <h1 class="display-1 fw-bold text-uppercase">Cartographic<br><span class="text-primary">Intelligence.</span></h1>
+                <p class="lead col-lg-8 mx-auto mt-4 opacity-100">Analysis of declassified acquisitions and historical investigations.</p>
+                <!-- Search Box -->
+                <div class="col-lg-6 mx-auto mt-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="SEARCH_DATABASE">
+                    </div>
+                     <button class="btn btn-primary mt-3 px-5 py-2">Execute Query</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Feed -->
+        <section class="py-5 bg-black">
+            <div class="container py-lg-5">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="briefing-card h-100">
+                            <img src="assets/images/blog_briefing_jpg_1774977455950.jpg" class="img-fluid mb-4 opacity-75 rounded" alt="Briefing" style="height: 200px; width: 100%; object-fit: cover;">
+                            <span class="stamp-red mb-3">Case ID: XJ-009</span>
+                            <h4 class="fw-bold mb-3 text-white">The Victorian Shadow-Maps</h4>
+                            <p class="text-secondary small mb-4">Strategic subterranean street maps from 1851. Absolute legitimacy confirmed.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm px-4 w-100">Read Briefing</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="briefing-card h-100">
+                             <img src="assets/images/pricing_portfolio_jpg_1774977479998.jpg" class="img-fluid mb-4 opacity-75 rounded" alt="Replicas" style="height: 200px; width: 100%; object-fit: cover;">
+                            <span class="stamp-red mb-3">Case ID: RT-441</span>
+                            <h4 class="fw-bold mb-3 text-white">Maritime Replicas Surge</h4>
+                            <p class="text-secondary small mb-4">Identification of 17th-century sea chart replicas surfacing in the market.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm px-4 w-100">Read Briefing</a>
+                        </div>
+                    </div>
+                    <!-- 3rd card centered on tab view -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="briefing-card h-100">
+                             <img src="assets/images/forensic_nautical_jpg_1774976991789.jpg" class="img-fluid mb-4 opacity-75 rounded" alt="Roman Fragment" style="height: 200px; width: 100%; object-fit: cover;">
+                            <span class="stamp-red mb-3">Case ID: MP-112</span>
+                            <h4 class="fw-bold mb-3 text-white">The Tiberius Fragment</h4>
+                            <p class="text-secondary small mb-4">Roman vellum fragment depicting lost coastal trade routes. Material confirmed.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm px-4 w-100">Read Briefing</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-5 bg-black">
-            <div class="container py-lg-5">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: XJ-009-LDN</span>
-                            <h3 class="fw-bold mb-3 text-white">The Victorian Shadow-Maps</h3>
-                            <p class="text-secondary small mb-4">New intelligence reveals a set of folding street maps from 1851 which were used for strategic subterranean planning. Our forensic review confirms their absolute legitimacy.</p>
-                            <a href="#" class="btn btn-outline-primary text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: RT-441-SEA</span>
-                            <h3 class="fw-bold mb-3 text-white">Illegal Maritime Replicas</h3>
-                            <p class="text-secondary small mb-4">A surge in high-quality 17th-century sea chart replicas is threatening the global market. Our firm has identified a source and updated our detection matrix.</p>
-                            <a href="#" class="btn btn-outline-primary text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: MP-112-ROM</span>
-                            <h3 class="fw-bold mb-3 text-white">The Tiberius Fragment</h3>
-                            <p class="text-secondary small mb-4">Unearthed in a private cellar in Rome, this vellum fragment depicts a lost coastal trade route. Material analysis suggests it predates the Great Fire of Rome.</p>
-                            <a href="#" class="btn btn-outline-primary text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: GH-889-OSL</span>
-                            <h3 class="fw-bold mb-3 text-white">Viking Navigation Crystals</h3>
-                            <p class="text-secondary small mb-4">A study on the use of 'sunstones' in early Norse navigation. Our lab has successfully replicated the polarising effects described in the ancient sagas.</p>
-                            <a href="#" class="btn btn-outline-primary text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: AS-223-TOK</span>
-                            <h3 class="fw-bold mb-3 text-white">Edo-Period Intelligence</h3>
-                            <p class="text-secondary small mb-4">Secret Shogunate maps mapping internal defense perimeters. These documents provide a rare glimpse into the isolationist strategy of 18th-century Japan.</p>
-                            <a href="#" class="btn btn-outline-primary text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="briefing-card h-100">
-                            <span class="stamp-red mb-3">Case ID: BW-556-NYK</span>
-                            <h3 class="fw-bold mb-3 text-white">Mapping the Cyber Frontier</h3>
-                            <p class="text-secondary small mb-4">An experimental project visualizing the early architecture of the internet as if it were a 16th-century atlas. Where history meets future topology.</p>
-                            <a href="#" class="btn btn-outline-info text-uppercase fw-bold ls-2">Read Briefing</a>
-                        </div>
+        <!-- Newsletter Subscription Section (To reach 3-4 sections) -->
+        <section class="py-5 bg-dark border-top border-secondary border-opacity-25">
+            <div class="container py-lg-4 text-center">
+                <h2 class="display-5 fw-bold text-uppercase mb-4 text-primary">Intelligence Feed.</h2>
+                <p class="lead opacity-75 mb-5 mx-auto col-lg-8 text-white">Subscribe to receive monthly declassified reports on high-value acquisitions.</p>
+                <div class="col-lg-6 mx-auto">
+                    <div class="input-group">
+                        <input type="email" class="form-control bg-black border-secondary text-white py-3" placeholder="AGENT_EMAIL">
+                        <button class="btn btn-primary px-4">Subscribe</button>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="mt-auto py-5 bg-dark border-top border-danger">
-        <div class="container text-center">
-            <p class="mb-0 text-white opacity-50">&copy; 2026 Intelligence Network. End of disclosure.</p>
+    <!-- Footer -->
+    <footer class="mt-auto">
+        <div class="container">
+            <div class="row g-5 mb-5 overflow-hidden">
+                <div class="col-lg-4 responsive-center">
+                    <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
+                        <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
+                        <span>ANtique mapping</span>
+                    </a>
+                    <p class="text-secondary small mb-4">Elite curators and forensic auditors since 2008.</p>
+                </div>
+                <div class="col-md-4 col-lg-2 offset-lg-1">
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Reports</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-secondary small text-decoration-none link-hover">Latest Cases</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary small text-decoration-none link-hover">Archived Audits</a></li>
+                        <li class="mb-2"><a href="contact.html" class="btn btn-primary btn-sm px-4 py-2 mt-3 text-uppercase w-100">Contact Now</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary opacity-25">
+            <div class="text-center py-3">
+                <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm.</p>
+            </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function toggleTheme() {
