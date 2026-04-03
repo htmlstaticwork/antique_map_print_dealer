@@ -1,54 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" dir="ltr" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Antique Map & Print Dealer</title>
-    <!-- Bootstrap CSS -->
+    <title>ANtique mapping</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Custom Style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <style>
+        .hero-contact {
+            background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('assets/images/vault_map_hero_jpg_1774976949861.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+            color: #fff;
+        }
+        .terminal-form {
+            background: var(--surface-color);
+            border: 1px solid var(--accent-color);
+            padding: 3rem;
+            position: relative;
+        }
+        .terminal-form label { color: var(--accent-color); font-family: monospace; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        .terminal-form input, .terminal-form textarea, .terminal-form select {
+            background: rgba(0,0,0,0.2); border: none; border-bottom: 1px solid #333; color: #fff; border-radius: 0; padding-left: 0;
+        }
+        .terminal-form input:focus, .terminal-form textarea:focus {
+            background: rgba(0,0,0,0.4); border-bottom: 2px solid var(--accent-color); box-shadow: none; color: #fff;
+        }
+        .glow-text { text-shadow: 0 0 10px var(--accent-color); color: var(--accent-color) !important; }
+    </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <i class="bi bi-compass me-2 fs-2"></i>
-                    <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                    <i class="bi bi-shield-lock me-2 fs-3"></i>
+                    <span>ANtique mapping</span>
                 </a>
-                
+
                 <div class="d-flex align-items-center order-lg-3 gap-2">
-                    <button class="theme-toggle-btn" id="rtl-toggle" title="Toggle RTL">
-                        <span class="rtl-label" style="font-size: 14px; font-weight: bold;">RTL</span>
-                    </button>
-                    <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
-                        <i class="bi bi-moon-fill"></i>
-                    </button>
-                    <div class="d-none d-sm-flex gap-2 mx-2">
-                        <a href="login.html" class="btn btn-primary text-center px-0" style="width: 110px;">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary text-center px-0" style="width: 110px;">Sign Up</a>
+                                            <!-- Toggles -->
+                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                            <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                        </button>
+                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                            RTL
+                        </button>
+                        <div class="d-none d-lg-flex gap-2">
+                        <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary px-3 py-2"
+                            style="font-size: 0.75rem;">Join Client List</a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileMenu">
+                        <i class="bi bi-list fs-2 text-white"></i>
                     </button>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,119 +78,69 @@
     </header>
 
     <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header pb-0">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-compass me-2 fs-2"></i>
-                <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                <i class="bi bi-shield-lock me-2 fs-3"></i>
+                <span class="text-white">ANtique mapping</span>
             </a>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="nav flex-column mb-4">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+            <ul class="nav flex-column mb-4 mt-4">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
-            <div class="d-grid gap-2">
-                <a href="login.html" class="btn btn-primary">Login</a>
-                <a href="register.html" class="btn btn-outline-primary">Sign Up</a>
-            </div>
         </div>
     </div>
 
-    <!-- Page Content -->
-    <main class="pt-5 mt-5">
-        <section class="hero position-relative d-flex align-items-center text-center py-5" style="background-image: url('file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/contact_hero_bg_1774960171151.png'); background-size: cover; background-position: center; min-height: 400px;">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-            <div class="container position-relative z-1 text-white">
-                <h1 class="display-4 fw-bold text-shadow">Visit Our Gallery</h1>
-                <p class="lead text-shadow">Personal consultations available in London and New York.</p>
+    <main>
+        <section class="hero-contact d-flex align-items-center mt-5">
+            <div class="container text-center py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="display-3 fw-bold text-uppercase" style="color: #fff;">Direct <br><span class="glow-text">Channel.</span></h1>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="py-5">
-            <div class="container">
-                <div class="row g-5">
-                    <!-- Contact Info -->
-                    <div class="col-lg-5">
-                        <h2 class="mb-4">Get in Touch</h2>
-                        <p class="text-muted mb-5">Have a question about a map or need a bespoke appraisal? Our curators respond to all inquiries within 24 hours.</p>
-                        
-                        <div class="d-flex mb-4">
-                            <div class="bg-primary text-white rounded-circle p-3 me-3" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                                <i class="bi bi-geo-alt"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Gallery Address</h5>
-                                <p class="text-muted mb-0 small">1245 Heritage Hall, Knightsbridge, London, UK</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="bg-primary text-white rounded-circle p-3 me-3" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Email Us</h5>
-                                <p class="text-muted mb-0 small">curator@antiquemaps.com</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-5">
-                            <div class="bg-primary text-white rounded-circle p-3 me-3" style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
-                                <i class="bi bi-telephone"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">Phone</h5>
-                                <p class="text-muted mb-0 small">+44 20 7123 4567</p>
-                            </div>
-                        </div>
-
-                        <!-- Map -->
-                        <div class="rounded overflow-hidden shadow-sm border" style="height: 300px;">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.64578601366!2d-0.16584618423019803!3d51.498114379633845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876051515902f43%3A0xe100159da8596646!2sKnightsbridge%2C%20London!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="col-lg-7">
-                        <div class="card p-4 border-0 shadow">
-                            <h3 class="mb-4">Send a Message</h3>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label text-muted small fw-bold">FIRST NAME</label>
-                                        <input type="text" class="form-control" placeholder="John">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label text-muted small fw-bold">LAST NAME</label>
-                                        <input type="text" class="form-control" placeholder="Doe">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-muted small fw-bold">EMAIL ADDRESS</label>
-                                        <input type="email" class="form-control" placeholder="john@example.com">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-muted small fw-bold">SUBJECT</label>
-                                        <select class="form-select">
-                                            <option>General Inquiry</option>
-                                            <option>Appraisal Request</option>
-                                            <option>Restoration Quote</option>
-                                            <option>Rare Piece Request</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label text-muted small fw-bold">YOUR MESSAGE</label>
-                                        <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
-                                    </div>
+        <section class="py-5 bg-black">
+            <div class="container py-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="terminal-form">
+                            <div class="row g-4">
+                                <div class="col-md-6 mb-4">
+                                    <label>Client_Name</label>
+                                    <input type="text" class="form-control" placeholder="IDENTIFY YOURSELF">
                                 </div>
-                            </form>
+                                <div class="col-md-6 mb-4">
+                                    <label>Encrypted_Email</label>
+                                    <input type="email" class="form-control" placeholder="COMM_ADDR">
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label>Request_Protocol</label>
+                                    <select class="form-select">
+                                        <option>Acquisition Pursuit</option>
+                                        <option>Forensic Appraisal</option>
+                                        <option>Value Mitigation</option>
+                                        <option>Private Vault Viewing</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <label>Message_Payload</label>
+                                    <textarea class="form-control" rows="5" placeholder="ENCRYPT YOUR REQUIREMENTS HERE"></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-5">
+                                    <button class="btn btn-primary btn-lg w-100 fw-bold ls-2 py-3">Transmit Signal</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -176,68 +148,31 @@
         </section>
     </main>
 
-    <!-- Footer (Same) -->
-    <footer class="mt-auto">
-        <div class="container">
-            <div class="row g-4 mb-5">
-                <div class="col-lg-4">
-                    <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
-                        <i class="bi bi-compass me-2 fs-2"></i>
-                        <span>ANTIQUE <span class="fw-light">MAPS</span></span>
-                    </a>
-                    <p class="text-secondary small mb-4">Official dealer of rare cartography and historical prints since 1985. We specialize in museum-quality preservation and authentication.</p>
-                    <div class="d-flex gap-3 footer-social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <h5 class="mb-4 fw-bold">Company</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html">Home1</a></li>
-                        <li class="mb-2"><a href="home-2.html">Home2</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="blog.html">Blog</a></li>
-                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-lg-2">
-                    <h5 class="mb-4 fw-bold">Support</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="contact.html">Contact Support</a></li>
-                        <li class="mb-2"><a href="#">Shipping Info</a></li>
-                        <li class="mb-2"><a href="404.html">Return Policy</a></li>
-                        <li class="mb-2"><a href="contact.html">Visit Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <h5 class="mb-4 fw-bold">Our Gallery</h5>
-                    <p class="text-secondary small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 1245 Heritage Hall, Knightsbridge, London, UK</p>
-                    <p class="text-secondary small mb-2"><i class="bi bi-envelope me-2 text-warning"></i> curator@antiquemaps.com</p>
-                    <p class="text-secondary small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +44 20 7123 4567</p>
-                </div>
-            </div>
-            <hr class="border-secondary opacity-25">
-            <div class="row align-items-center py-3">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 small text-secondary">&copy; 2026 Antique Map & Print Dealer. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <ul class="list-inline mb-0 small text-secondary">
-                        <li class="list-inline-item"><a href="#" class="ms-3">Privacy</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3">Terms</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3">Cookies</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="mt-auto py-5 bg-dark">
+        <div class="container text-center">
+            <p class="mb-0 text-white opacity-50">&copy; 2026 Protocol Broadcast. All signals end-to-end encrypted.</p>
         </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            document.querySelectorAll('#themeIcon').forEach(icon => {
+                if(newTheme === 'light') {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                }
+            });
+        }
+        function toggleRTL() {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+        }
+    </script>
 </body>
 </html>

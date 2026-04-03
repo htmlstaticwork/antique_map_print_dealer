@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light">
+<html lang="en" dir="ltr" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antique Map & Print Dealer | Home</title>
-    <meta name="description" content="Discover rare antique maps, historical prints, and expert framing services at Antique Map & Print Dealer. High-resolution gallery and professional appraisal.">
+    <title>ANtique mapping</title>
+    <meta name="description"
+        content="Antique Map & Print Dealer is an elite agency specializing in authentic cartography, historical forensics, and museum-grade acquisitions.">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -14,6 +16,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -21,30 +24,33 @@
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <i class="bi bi-compass me-2 fs-2"></i>
-                    <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                    <i class="bi bi-shield-lock me-2 fs-3"></i>
+                    <span>ANtique mapping</span>
                 </a>
-                
+
                 <div class="d-flex align-items-center order-lg-3 gap-2">
-                    <button class="theme-toggle-btn" id="rtl-toggle" title="Toggle RTL">
-                        <span class="rtl-label" style="font-size: 14px; font-weight: bold;">RTL</span>
-                    </button>
-                    <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
-                        <i class="bi bi-moon-fill"></i>
-                    </button>
-                    <div class="d-none d-sm-flex gap-2 mx-2">
-                        <a href="login.html" class="btn btn-primary text-center px-0" style="width: 110px;">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary text-center px-0" style="width: 110px;">Sign Up</a>
+                                            <!-- Toggles -->
+                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                            <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                        </button>
+                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                            RTL
+                        </button>
+                        <div class="d-none d-lg-flex gap-2">
+                        <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary px-3 py-2"
+                            style="font-size: 0.75rem;">Join Client List</a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#mobileMenu">
+                        <i class="bi bi-list fs-2 text-white"></i>
                     </button>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
@@ -57,214 +63,241 @@
     </header>
 
     <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header pb-0">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-compass me-2 fs-2"></i>
-                <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                <i class="bi bi-shield-lock me-2 fs-3"></i>
+                <span class="text-white">ANtique mapping</span>
             </a>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
-            <ul class="nav flex-column mb-4">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
+            <ul class="nav flex-column mb-4 mt-4">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
-            <div class="d-grid gap-2">
-                <a href="login.html" class="btn btn-primary">Login</a>
-                <a href="register.html" class="btn btn-outline-primary">Sign Up</a>
-            </div>
         </div>
     </div>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero d-flex align-items-center text-center" style="background-image: url('file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/hero_antique_map_1774956533190.png'); background-size: cover; background-position: center; min-height: 80vh;">
-            <div class="container">
-                <div class="row hero-content justify-content-center">
+        <section class="hero d-flex align-items-center"
+            style="background-image: url('assets/images/hero_antique_mapping_jpg_1774984078497.jpg'); background-size: cover; background-position: center;">
+            <div class="container hero-content text-center">
+                <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h1 class="display-3 mb-4 fw-bold shadow-sm">Timeless Treasures, <br><span class="text-warning">Meticulously Preserved.</span></h1>
-                        <p class="lead mb-5 fs-4 fw-light">Explore the world as it was. Authentic antique maps and rare historical prints for the discerning collector.</p>
-                        <div class="d-flex gap-3 justify-content-center">
-                            <a href="index.html" class="btn btn-primary btn-lg px-5">Explore Gallery</a>
-                            <a href="contact.html" class="btn btn-outline-light btn-lg px-5 fw-bold">Contact Us</a>
+                        <h1 class="display-1 text-white text-uppercase ls-2">Elite Antique <br><span
+                                class="text-gradient">mapping.</span></h1>
+                        <p class="lead text-white opacity-75 mb-5 fs-4 col-lg-8 mx-auto">In a world of digital replicas,
+                            we reveal the original truth. We provide the most thorough cartographic auditing and
+                            procurement services for the elite collector.</p>
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                            <a href="services.html" class="btn btn-primary px-5 py-3">Initiate Acquisition</a>
+                            <a href="contact.html" class="btn btn-outline-primary px-5 py-3">Request Appraisal</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="row g-4 text-center">
-                    <div class="col-md-3">
-                        <h3 class="display-5 fw-bold text-primary">5k+</h3>
-                        <p class="text-muted text-uppercase small ls-2">Rare Maps</p>
+        <!-- The Forensic Matrix -->
+        <section class="py-5 bg-dark">
+            <div class="container py-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="matrix-border">
+                            <h2 class="display-3 mb-4">Cartographic <br>Forensics.</h2>
+                            <p class="text-secondary mb-5 fs-5">We go beyond the paper. Every acquisition undergoes a
+                                multi-spectrum provenance audit to ensure absolute historical integrity before
+                                commitment.</p>
+
+                            <div class="row g-4 pt-3">
+                                <div class="col-sm-6">
+                                    <h5 class="fw-bold mb-2">Provenance Audit</h5>
+                                    <p class="text-secondary small">Comprehensive chain-of-custody verification back to
+                                        the original cartographer.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5 class="fw-bold mb-2">Paper Analysis</h5>
+                                    <p class="text-secondary small">Non-invasive forensic testing of fibers, watermarks,
+                                        and acidic content.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5 class="fw-bold mb-2">Pigment Scanning</h5>
+                                    <p class="text-secondary small">Spectral analysis of hand-coloring to confirm
+                                        era-appropriate ink composition.</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h5 class="fw-bold mb-2">Value Protection</h5>
+                                    <p class="text-secondary small">Strategic curation that ensures your maps remain a
+                                        high-performing physical asset.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <h3 class="display-5 fw-bold text-primary">20+</h3>
-                        <p class="text-muted text-uppercase small ls-2">Years Experience</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3 class="display-5 fw-bold text-primary">1k+</h3>
-                        <p class="text-muted text-uppercase small ls-2">Happy Clients</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3 class="display-5 fw-bold text-primary">15+</h3>
-                        <p class="text-muted text-uppercase small ls-2">Countries Served</p>
+                    <div class="col-lg-6">
+                        <img src="assets/images/matrix_botanical_jpg_1774976969725.jpg"
+                            class="img-fluid border border-0 shadow-lg" alt="Forensic Analysis">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Shop / Acquisitions Section -->
-        <section class="py-5" id="shop">
-            <div class="container">
+        <!-- Current Assets Section -->
+        <section class="py-5" id="assets">
+            <div class="container py-lg-5">
                 <div class="text-center mb-5">
-                    <h2 class="display-4 fw-bold">Curated Masterpieces</h2>
-                    <p class="text-muted fs-5">Authentic, museum-quality antique maps available for acquisition.</p>
+                    <div class="status-ticker mb-2">ASSETS_AVAILABLE_FOR_ACQUISITION</div>
+                    <h2 class="display-4 fw-bold text-uppercase">The Registry.</h2>
                 </div>
                 <div class="row g-4">
                     <!-- Product 1 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
-                            <div class="position-relative overflow-hidden">
-                                <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 z-3">Rare Origin</span>
-                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/celestial_star_map_1774956552665.png" class="card-img-top zoom-on-hover" alt="Celestial Map" style="height: 300px; object-fit: cover;">
+                        <div class="card h-100 product-card">
+                            <div class="position-relative">
+                                <span
+                                    class="badge bg-primary text-black position-absolute top-0 start-0 m-3 z-3">CERTIFIED</span>
+                                <img src="assets/images/celestial_collection_jpg_1774975953851.jpg" class="card-img-top"
+                                    alt="Celestial Map" style="height: 350px; object-fit: cover;">
                             </div>
-                            <div class="card-body d-flex flex-column">
-                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1660 &bull; Original Engraving</div>
-                                <h5 class="card-title fw-bold">Harmonia Macrocosmica</h5>
-                                <p class="card-text text-muted small flex-grow-1">A breathtaking celestial masterpiece by Andreas Cellarius, detailing the Ptolemaic universe. This map bears exquisite original hand-coloring from the Dutch Golden Age.</p>
-                                <h4 class="text-primary fw-bold mb-3">$4,500</h4>
-                                <div class="mb-4 bg-light p-3 border rounded">
-                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
-                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
-                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
-                                        <option value="gilded">Gilded Wood (Museum Glass) - +$350</option>
-                                        <option value="walnut">Solid Walnut (UV Acrylic) - +$250</option>
-                                    </select>
-                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="status-ticker mb-2" style="font-size: 0.65rem;">SERIAL_ID: CM-1660-HMC</div>
+                                <h4 class="card-title fw-bold">Harmonia Macrocosmica</h4>
+                                <p class="card-text text-secondary small flex-grow-1">Breathtaking 1660 Andreas
+                                    Cellarius engraving. Documented provenance from three private royal collections.</p>
+                                <div class="d-flex justify-content-between align-items-end mt-4">
+                                    <div>
+                                        <div class="fs-tiny opacity-50">ACQUISITION_PRICE</div>
+                                        <h3 class="mb-0 text-primary">$45,000</h3>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm px-4">Initialize Inquiry</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Product 2 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
-                            <div class="position-relative overflow-hidden">
-                                <span class="badge bg-primary position-absolute top-0 start-0 m-3 z-3">New Arrival</span>
-                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/vintage_nautical_chart_1774956567918.png" class="card-img-top zoom-on-hover" alt="Nautical Chart" style="height: 300px; object-fit: cover;">
+                        <div class="card h-100 product-card">
+                            <div class="position-relative">
+                                <span
+                                    class="badge bg-light text-black position-absolute top-0 start-0 m-3 z-3">NEW_ASSET</span>
+                                <img src="assets/images/nautical_collection_jpg_1774975906885.jpg" class="card-img-top"
+                                    alt="Nautical Chart" style="height: 350px; object-fit: cover;">
                             </div>
-                            <div class="card-body d-flex flex-column">
-                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1715 &bull; Hand-Colored</div>
-                                <h5 class="card-title fw-bold">Caribbean Nautical Chart</h5>
-                                <p class="card-text text-muted small flex-grow-1">An exceptionally detailed chart of the West Indies from the era of piracy. Features ornate compass roses and rhumb lines used for maritime navigation.</p>
-                                <h4 class="text-primary fw-bold mb-3">$2,800</h4>
-                                <div class="mb-4 bg-light p-3 border rounded">
-                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
-                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
-                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
-                                        <option value="mahogany">Mahogany Profile (Museum Glass) - +$300</option>
-                                        <option value="distressed">Distressed Oak (UV Acrylic) - +$220</option>
-                                    </select>
-                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="status-ticker mb-2" style="font-size: 0.65rem;">SERIAL_ID: NC-1715-CN</div>
+                                <h4 class="card-title fw-bold">Caribbean Nautical Chart</h4>
+                                <p class="card-text text-secondary small flex-grow-1">1715 maritime intelligence.
+                                    Features complete rhumb line systems and hidden pirate encampment references.</p>
+                                <div class="d-flex justify-content-between align-items-end mt-4">
+                                    <div>
+                                        <div class="fs-tiny opacity-50">ACQUISITION_PRICE</div>
+                                        <h3 class="mb-0 text-primary">$28,500</h3>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm px-4">Initialize Inquiry</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Product 3 -->
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm product-card transition-hover">
-                            <div class="position-relative overflow-hidden">
-                                <span class="badge bg-dark position-absolute top-0 start-0 m-3 z-3">Staff Pick</span>
-                                <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/antique_city_plan_1774956586519.png" class="card-img-top zoom-on-hover" alt="City Plan" style="height: 300px; object-fit: cover;">
+                        <div class="card h-100 product-card">
+                            <div class="position-relative">
+                                <span
+                                    class="badge bg-primary text-black position-absolute top-0 start-0 m-3 z-3">RARE_LEVEL_7</span>
+                                <img src="assets/images/matrix_botanical_jpg_1774976969725.jpg" class="card-img-top"
+                                    alt="Botanical Print" style="height: 350px; object-fit: cover;">
                             </div>
-                            <div class="card-body d-flex flex-column">
-                                <div class="text-muted small mb-2"><i class="bi bi-clock-history me-1"></i> Circa 1851 &bull; Steel Engraving</div>
-                                <h5 class="card-title fw-bold">Victorian Map of London</h5>
-                                <p class="card-text text-muted small flex-grow-1">A highly detailed, folding street map of London showcasing the city during the Great Exhibition. Rare pristine condition without centerfold tears.</p>
-                                <h4 class="text-primary fw-bold mb-3">$1,250</h4>
-                                <div class="mb-4 bg-light p-3 border rounded">
-                                    <label class="form-label small fw-bold mb-2">Museum Framing Options</label>
-                                    <select class="form-select form-select-sm border-secondary mb-3 shadow-none">
-                                        <option value="unframed">Unframed (Archival Sleeve) - +$0</option>
-                                        <option value="ebony">Ebony Flat (Museum Glass) - +$275</option>
-                                        <option value="silver">Silver Gilt (UV Acrylic) - +$250</option>
-                                    </select>
-                                    <button class="btn btn-dark w-100 fw-bold"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <div class="status-ticker mb-2" style="font-size: 0.65rem;">SERIAL_ID: BP-1851-LDN</div>
+                                <h4 class="card-title fw-bold">Imperial London Master</h4>
+                                <p class="card-text text-secondary small flex-grow-1">Steel engraving from the Great
+                                    Exhibition year. Exceptional condition with zero structural degradation.</p>
+                                <div class="d-flex justify-content-between align-items-end mt-4">
+                                    <div>
+                                        <div class="fs-tiny opacity-50">ACQUISITION_PRICE</div>
+                                        <h3 class="mb-0 text-primary">$12,750</h3>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm px-4">Initialize Inquiry</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5">
-                    <a href="services.html" class="btn btn-outline-primary btn-lg px-5 fw-bold">View Full Acquisition Catalogue</a>
+            </div>
+        </section>
+
+        <!-- Global Acquisitions Network -->
+        <section class="py-5 bg-dark">
+            <div class="container py-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-lg-5 text-end">
+                            <h2 class="display-3 fw-bold mb-4">Global Acquisitions Network.</h2>
+                            <p class="lead mb-4 opacity-75">Our reach is as vast as the maps we procure. We operate an encrypted logistics network that safely moves delicate historical assets across borders with total security.</p>
+                            <p class="mb-5 text-secondary">From the auctions of London to private estates in the Orient, our acquisition specialists are on the ground to verify and secure your investment.</p>
+                            <a href="services.html" class="btn btn-outline-primary px-5 py-3">View Logistics Protocol</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <img src="assets/images/global_acquisitions.png" class="img-fluid shadow-lg rounded" alt="Global Logistics">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Our Services Preview -->
-        <section class="py-5 bg-dark text-white">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <h2 class="display-5 mb-4">Professional Preservation Services</h2>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-warning me-3 fs-4"></i>
-                                <div>
-                                    <h5>Archival Restoration</h5>
-                                    <p class="text-secondary small">Removing foxing, acidic stains, and professional tear repair.</p>
+        <!-- The Preservation Lab -->
+        <section class="py-5 bg-white text-black">
+            <div class="container py-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="p-lg-5 border-start border-primary border-4 my-auto">
+                            <h2 class="display-3 fw-bold mb-4">The Preservation Lab.</h2>
+                            <p class="lead mb-4 fw-bold text-primary text-uppercase ls-2">Science in service of history.</p>
+                            <p class="mb-4 opacity-75">We utilize advanced spectral imaging and microscopic fiber analysis to not just authenticate, but to recommend the exact environmental controls needed to preserve your maps for the next three centuries.</p>
+                            
+                            <!-- New Feature Row to fill space -->
+                            <div class="row g-4 mb-5">
+                                <div class="col-sm-4">
+                                    <h4 class="fw-bold mb-0">300+</h4>
+                                    <p class="small text-uppercase opacity-50 mb-0">Year Warranty</p>
                                 </div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-warning me-3 fs-4"></i>
-                                <div>
-                                    <h5>Custom Museum Framing</h5>
-                                    <p class="text-secondary small">Choose from hand-gilded, mahogany, or walnut profiles. We use exclusively UV-protective museum glass, acid-free mats, and reversible mounting techniques to ensure lifetime archival preservation of your investment.</p>
+                                <div class="col-sm-4">
+                                    <h4 class="fw-bold mb-0">100%</h4>
+                                    <p class="small text-uppercase opacity-50 mb-0">Non-Invasive</p>
                                 </div>
-                            </li>
-                        </ul>
-                        <a href="services.html" class="btn btn-warning btn-lg px-4 fw-bold mb-4 mb-lg-0">Explore Our Workshop</a>
+                                <div class="col-sm-4">
+                                    <h4 class="fw-bold mb-0">99.9%</h4>
+                                    <p class="small text-uppercase opacity-50 mb-0">Audit Accuracy</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-3">
+                                <a href="about.html" class="btn btn-dark text-white px-5 py-3">Scientific Methodology</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="position-relative">
-                             <img src="file:///C:/Users/VISU/.gemini/antigravity/brain/7b6a5e2e-576e-4ac6-8298-fae44eb2f43e/custom_framing_1774952897974.png" class="img-fluid rounded shadow-lg" alt="Custom Archival Framing">
-                             <div class="position-absolute bottom-0 end-0 bg-warning text-dark p-3 m-4 rounded shadow d-none d-md-block">
-                                 <h6 class="fw-bold mb-0">Conservation Grade</h6>
-                                 <p class="small mb-0 mt-1">100% Acid-Free Materials</p>
-                             </div>
-                        </div>
+                        <img src="assets/images/microscopic_analysis.png" class="img-fluid shadow-lg rounded" alt="Microscopic Analysis">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter -->
-        <section class="py-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card p-5 bg-primary text-white text-center border-0">
-                            <h2 class="mb-3">Join the Connoisseur's List</h2>
-                            <p class="mb-4 text-warning">Receive early access to new acquisitions and historical insights.</p>
-                            <form class="row g-2 justify-content-center">
-                                <div class="col-md-8">
-                                    <input type="email" class="form-control form-control-lg border-0" placeholder="Your email address">
-                                </div>
-                                <div class="col-md-auto">
-                                    <button type="submit" class="btn btn-warning btn-lg px-4 fw-bold">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+        <!-- Secure Protocol -->
+        <section class="py-5 bg-primary text-black">
+            <div class="container py-lg-4 text-center">
+                <h2 class="display-3 fw-bold mb-4">Secure Intake Protocol.</h2>
+                <p class="lead mb-5 col-lg-8 mx-auto fw-bold">Ready to secure a historical asset? Our curators are
+                    standing by to guide your private acquisition through our encrypted fulfillment network.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="contact.html" class="btn btn-dark text-white px-5 py-3">Book Secure Consultation</a>
+                    <a href="pricing.html" class="btn btn-outline-dark px-5 py-3">View Services Matrix</a>
                 </div>
             </div>
         </section>
@@ -273,71 +306,108 @@
     <!-- Footer -->
     <footer class="mt-auto">
         <div class="container">
-            <div class="row g-4 mb-5">
+            <div class="row g-5 mb-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
-                        <i class="bi bi-compass me-2 fs-2"></i>
-                        <span>ANTIQUE <span class="fw-light">MAPS</span></span>
+                        <i class="bi bi-shield-lock me-2 fs-3"></i>
+                        <span>ANtique mapping</span>
                     </a>
-                    <p class="text-secondary small mb-4">Official dealer of rare cartography and historical prints since 1985. We specialize in museum-quality preservation and authentication.</p>
-                    <div class="d-flex gap-3 footer-social-icons">
+                    <p class="text-secondary small mb-4">Elite curators and forensic auditors of historical cartography
+                        since 2008. We specialize in identifying, authenticating, and preserving high-value historical
+                        assets.</p>
+                    <div class="d-flex footer-social-icons">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-instagram"></i></a>
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <h5 class="mb-4 fw-bold">Company</h5>
+                <div class="col-md-4 col-lg-2 offset-lg-1">
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">The Firm</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html">Home1</a></li>
-                        <li class="mb-2"><a href="home-2.html">Home2</a></li>
-                        <li class="mb-2"><a href="about.html">About</a></li>
-                        <li class="mb-2"><a href="services.html">Services</a></li>
-                        <li class="mb-2"><a href="blog.html">Blog</a></li>
-                        <li class="mb-2"><a href="pricing.html">Pricing</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                        <li class="mb-2"><a href="index.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Home Protocol</a>
+                        </li>
+                        <li class="mb-2"><a href="about.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Our Methodology</a>
+                        </li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Core Services</a>
+                        </li>
+                        <li class="mb-2"><a href="blog.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Asset Reports</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-lg-2">
-                    <h5 class="mb-4 fw-bold">Support</h5>
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Client Services</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="contact.html">Contact Support</a></li>
-                        <li class="mb-2"><a href="#">Shipping Info</a></li>
-                        <li class="mb-2"><a href="404.html">Return Policy</a></li>
-                        <li class="mb-2"><a href="contact.html">Visit Gallery</a></li>
+                        <li class="mb-2"><a href="contact.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Secure Portal</a>
+                        </li>
+                        <li class="mb-2"><a href="pricing.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Value Analysis</a>
+                        </li>
+                        <li class="mb-2"><a href="#"
+                                class="text-secondary small text-decoration-none transition-smooth">Authentication</a>
+                        </li>
+                        <li class="mb-2"><a href="contact.html"
+                                class="text-secondary small text-decoration-none transition-smooth">Private Vault</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-4">
-                    <h5 class="mb-4 fw-bold">Our Gallery</h5>
-                    <p class="text-secondary small mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 1245 Heritage Hall, Knightsbridge, London, UK</p>
-                    <p class="text-secondary small mb-2"><i class="bi bi-envelope me-2 text-warning"></i> curator@antiquemaps.com</p>
-                    <p class="text-secondary small mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +44 20 7123 4567</p>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">The Vault</h6>
+                    <p class="text-secondary small mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> 700 Bond
+                        Street, Mayfair, London, UK</p>
+                    <p class="text-secondary small mb-2"><i class="bi bi-envelope me-2 text-primary"></i>
+                        protocol@antiquemaps.com</p>
+                    <p class="text-secondary small mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +44 20 7000
+                        0000</p>
                 </div>
             </div>
             <hr class="border-secondary opacity-25">
             <div class="row align-items-center py-3">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 small text-secondary">&copy; 2026 Antique Map & Print Dealer. All rights reserved.</p>
+                    <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm. All assets encrypted and
+                        secured.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <ul class="list-inline mb-0 small text-secondary">
-                        <li class="list-inline-item"><a href="#" class="ms-3">Privacy</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3">Terms</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3">Cookies</a></li>
+                    <ul class="list-inline mb-0 fs-tiny text-secondary">
+                        <li class="list-inline-item"><a href="#"
+                                class="ms-3 text-secondary text-decoration-none">Privacy_Policy</a></li>
+                        <li class="list-inline-item"><a href="#"
+                                class="ms-3 text-secondary text-decoration-none">Terms_of_Engagement</a></li>
+                        <li class="list-inline-item"><a href="#"
+                                class="ms-3 text-secondary text-decoration-none">Compliance_Matrix</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to top -->
-    <a href="#" id="back-to-top" class="btn btn-warning rounded-circle py-3 px-3 shadow">
-        <i class="bi bi-arrow-up"></i>
-    </a>
-
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            document.querySelectorAll('#themeIcon').forEach(icon => {
+                if(newTheme === 'light') {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                }
+            });
+        }
+        function toggleRTL() {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+        }
+    </script>
 </body>
+
 </html>
