@@ -25,6 +25,15 @@
         <!-- Section 1: Auth Form -->
         <section class="auth-wrapper py-5">
             <div class="container">
+                <div class="d-flex justify-content-end mb-4">
+                    <!-- Toggles -->
+                    <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                    </button>
+                    <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                        RTL
+                    </button>
+                </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6">
                         <div class="auth-card shadow-lg mx-auto">
@@ -51,7 +60,7 @@
                                     <input type="password" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="••••••••">
                                 </div>
                                 <div class="mb-4">
-                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Join Client List</button>
+                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Join</button>
                                 </div>
                             </form>
                             
@@ -115,5 +124,25 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', newTheme);
+            document.querySelectorAll('#themeIcon').forEach(icon => {
+                if(newTheme === 'light') {
+                    icon.classList.remove('bi-moon-fill');
+                    icon.classList.add('bi-sun-fill');
+                } else {
+                    icon.classList.remove('bi-sun-fill');
+                    icon.classList.add('bi-moon-fill');
+                }
+            });
+        }
+        function toggleRTL() {
+            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
+        }
+    </script>
 </body>
 </html>
