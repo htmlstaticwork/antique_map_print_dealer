@@ -21,8 +21,56 @@
         .auth-card {
             background: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 3rem;
-            max-width: 450px;
+            padding: 3.5rem;
+            max-width: 500px;
+            width: 100%;
+            transition: all var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            z-index: 5;
+        }
+        .auth-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circleCode, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            transition: all var(--transition-smooth);
+            pointer-events: none;
+            opacity: 0;
+        }
+        .auth-card:hover::before {
+            opacity: 1;
+            top: -50%;
+            left: -50%;
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border-color: var(--accent-color) !important;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2) !important;
+        }
+        .auth-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .auth-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        .auth-link:hover::after {
             width: 100%;
         }
     </style>
@@ -32,8 +80,8 @@
         <!-- Section 1: Auth Form -->
         <section class="auth-wrapper py-5">
             <div class="container">
-                <div class="row justify-content-center align-items-center g-5">
-                    <div class="col-lg-5 col-md-8">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6">
                         <div class="auth-card shadow-lg mx-auto">
                             <div class="text-center mb-5">
                                 <a href="index.html" class="navbar-brand d-inline-flex align-items-center">
@@ -42,33 +90,26 @@
                                 </a>
                             </div>
                             
-                            <h4 class="fw-bold text-uppercase mb-4 text-primary text-center">Vault Access</h4>
+                            <h4 class="fw-bold text-uppercase mb-4 text-primary text-center ls-2">Vault Access</h4>
                             
                             <form>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label class="form-label small text-secondary">EMAIL_ADDRESS</label>
-                                    <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="ID_STRING">
+                                    <input type="email" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="ID_STRING">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label small text-secondary">PASSWORD</label>
-                                    <input type="password" class="form-control bg-dark border-secondary text-white" placeholder="••••••••">
+                                    <input type="password" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="••••••••">
                                 </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <button class="btn btn-primary px-5 py-2 text-uppercase fw-bold ls-2">Login</button>
+                                <div class="mb-4">
+                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Login</button>
                                 </div>
                             </form>
                             
-                            <div class="mt-4 text-center">
-                                <p class="small text-secondary">New Client? <a href="register.html" class="text-primary text-decoration-none fw-bold auth-link">Enroll Now</a></p>
+                            <div class="mt-5 text-center pt-3 border-top border-secondary border-opacity-10">
+                                <p class="small text-secondary mb-2">New Client? <a href="register.html" class="text-primary text-decoration-none fw-bold auth-link">Enroll Now</a></p>
                                 <p class="small"><a href="#" class="text-secondary text-decoration-none auth-link">Forgot Password?</a></p>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Extra content for visual balance -->
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <div class="p-5 border-start border-primary border-4">
-                            <h2 class="display-5 text-white mb-4">Secure Gateway.</h2>
-                            <p class="lead text-secondary">Unauthorized access is monitored and logged in the global ledger.</p>
                         </div>
                     </div>
                 </div>

@@ -18,13 +18,6 @@
             background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('assets/images/vault_map_hero_jpg_1774976949861.jpg');
             background-size: cover;
         }
-        .auth-card {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            padding: 3rem;
-            max-width: 450px;
-            width: 100%;
-        }
     </style>
 </head>
 <body>
@@ -32,8 +25,8 @@
         <!-- Section 1: Auth Form -->
         <section class="auth-wrapper py-5">
             <div class="container">
-                <div class="row justify-content-center align-items-center g-5">
-                    <div class="col-lg-5 col-md-8">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6">
                         <div class="auth-card shadow-lg mx-auto">
                             <div class="text-center mb-5">
                                 <a href="index.html" class="navbar-brand d-inline-flex align-items-center">
@@ -42,36 +35,30 @@
                                 </a>
                             </div>
                             
-                            <h4 class="fw-bold text-uppercase mb-4 text-primary text-center">Enrollment</h4>
+                            <h4 class="fw-bold text-uppercase mb-4 text-primary text-center ls-2">Enrollment</h4>
                             
                             <form>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label class="form-label small text-secondary">NAME_ID</label>
-                                    <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="IDENT_STRING">
+                                    <input type="text" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="IDENT_STRING">
                                 </div>
-                                <div class="mb-3">
+                                <div class="mb-4">
                                     <label class="form-label small text-secondary">EMAIL_ADDRESS</label>
-                                    <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="COMM_ADDR">
+                                    <input type="email" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="COMM_ADDR">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label small text-secondary">PASSWORD</label>
-                                    <input type="password" class="form-control bg-dark border-secondary text-white" placeholder="••••••••">
+                                    <input type="password" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="••••••••">
                                 </div>
-                                <div class="d-flex justify-content-end mb-4">
-                                    <button class="btn btn-primary px-5 py-2 text-uppercase fw-bold ls-2">Join Client List</button>
+                                <div class="mb-4">
+                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Join Client List</button>
                                 </div>
                             </form>
                             
-                            <div class="mt-4 text-center">
-                                <p class="small text-secondary">Existing Client? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link">Access Vault</a></p>
+                            <div class="mt-5 text-center pt-3 border-top border-secondary border-opacity-10">
+                                <p class="small text-secondary mb-2">Existing Client? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link">Access Vault</a></p>
                                 <p class="small"><a href="#" class="text-secondary text-decoration-none auth-link">Terms & Conditions</a></p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 d-none d-lg-block">
-                        <div class="p-5 border-start border-primary border-4">
-                            <h2 class="display-5 text-white mb-4">Join The Ranks.</h2>
-                            <p class="lead text-secondary">Our client list is strictly curated. Only verified historical auditors and elite collectors are granted entry.</p>
                         </div>
                     </div>
                 </div>
