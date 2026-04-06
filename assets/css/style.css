@@ -86,29 +86,54 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   transition: all var(--transition-smooth);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
 }
 
 .navbar-brand {
-  font-size: 1.3rem !important;
-  letter-spacing: 1px !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 2px !important;
   font-weight: 900 !important;
   text-transform: uppercase;
   color: var(--accent-color) !important;
   display: flex !important;
   align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.navbar-brand i {
+  margin-right: 12px;
+}
+
+.navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
 }
 
 .nav-link {
-  font-weight: 600;
-  font-size: 0.8rem !important;
+  font-weight: 700;
+  font-size: 0.75rem !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: var(--text-primary) !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0 1.25rem !important;
   transition: color var(--transition-smooth);
   position: relative;
+  display: flex !important;
+  align-items: center !important;
+  height: 80px;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -119,16 +144,45 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   content: '';
   position: absolute;
   bottom: 0px;
-  left: 1rem;
-  right: 1rem;
-  height: 3px;
+  left: 0;
+  right: 0;
+  height: 4px;
   background-color: var(--accent-color);
   box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Toggles and CTA Alignment */
+.navbar .order-lg-3 {
+  display: flex !important;
+  align-items: center !important;
+  height: 100%;
+}
+
+.navbar .btn-link {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  color: var(--accent-color) !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-cta .btn {
+  padding: 0.6rem 1.5rem !important;
+  font-size: 0.7rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: fit-content;
+  align-self: center;
 }
 
 .offcanvas-body .nav-link.active {
   background-color: rgba(212, 175, 55, 0.1);
   border-left: 4px solid var(--accent-color);
+  height: auto !important;
+  padding: 1rem !important;
 }
 
 /* --- Hero: Spacing & Overlap Fixes --- */
@@ -272,12 +326,17 @@ footer {
   
   .navbar-expand-lg .navbar-collapse {
     position: absolute;
-    top: 100%;
+    top: 80px;
     left: 0;
     right: 0;
     padding: 2rem;
     background: var(--glass-bg);
     border-bottom: 2px solid var(--accent-color);
+  }
+
+  .nav-link {
+    height: auto !important;
+    padding: 1rem !important;
   }
 
   /* Defect 30: Navbar Alignment at 1024px */
