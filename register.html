@@ -25,18 +25,18 @@
         <!-- Section 1: Auth Form -->
         <section class="auth-wrapper py-5">
             <div class="container">
-                <div class="d-flex justify-content-end mb-4">
-                    <!-- Toggles -->
-                    <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
-                        <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
-                    </button>
-                    <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
-                        RTL
-                    </button>
-                </div>
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-6">
-                        <div class="auth-card shadow-lg mx-auto">
+                        <div class="auth-card shadow-lg mx-auto position-relative">
+                            <div class="position-absolute top-0 end-0 p-3 d-flex gap-2">
+                                <!-- Toggles -->
+                                <button class="btn btn-link text-decoration-none text-secondary p-0 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                                    <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                                </button>
+                                <button class="btn btn-link text-decoration-none text-secondary p-0 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                                    RTL
+                                </button>
+                            </div>
                             <div class="text-center mb-5">
                                 <a href="index.html" class="navbar-brand d-inline-flex align-items-center">
                                     <i class="bi bi-shield-lock me-2 fs-2 text-primary"></i>
