@@ -77,28 +77,31 @@ body {
   color: var(--accent-color) !important;
 }
 
-/* Redefine bootstrap utilities to be theme-aware for visibility */
-.text-white, .text-black, .text-dark, .text-light {
+/* Redefine bootstrap utilities to be theme-aware for total visibility */
+.text-white, .text-black, .text-dark, .text-light, .text-body, .text-muted {
   color: var(--text-primary) !important;
 }
+
+.bg-white, .bg-light, .bg-dark, .bg-black, .bg-body {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ensure branding sections (like Primary Gold) still pop but handle text contrast */
+.bg-primary {
+  background-color: var(--accent-color) !important;
+  color: #0a0a0a !important; /* Always dark text on gold background */
+}
+
+/* Redefine button colors strictly on background color */
+.btn-primary .bi { color: #0a0a0a !important; }
+.btn-dark .bi { color: var(--accent-color) !important; }
 
 .card, .offcanvas {
   background-color: var(--surface-color) !important;
   border-color: var(--border-color) !important;
   color: var(--text-primary) !important;
   height: 100%;
-}
-
-.bg-light {
-  background-color: var(--surface-color) !important;
-}
-
-.bg-dark {
-  background-color: var(--bg-dark) !important;
-}
-
-.bg-black {
-  background-color: #0a0a0a !important;
 }
 
 h1, h2, h3, h4, h5, h6, .display-font, .card-title {
@@ -114,17 +117,20 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
-  padding: 0.75rem 0;
+  padding: 0 !important;
+  height: 85px !important; /* Fixed robust height */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: all var(--transition-smooth);
-  height: 80px;
-  display: flex;
-  align-items: center;
 }
 
 .navbar .container {
   display: flex !important;
   align-items: center !important;
-  height: 100%;
+  justify-content: space-between !important;
+  height: 100% !important;
+  padding: 0 15px !important;
 }
 
 .navbar-brand {
@@ -133,10 +139,10 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   font-weight: 900 !important;
   text-transform: uppercase;
   color: var(--accent-color) !important;
+  height: 100% !important;
   display: flex !important;
   align-items: center !important;
   margin: 0 !important;
-  padding: 0 !important;
   line-height: 1 !important;
 }
 
@@ -161,7 +167,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   position: relative;
   display: flex !important;
   align-items: center !important;
-  height: 80px;
+  height: 85px !important; /* Match navbar height */
 }
 
 .nav-link:hover, .nav-link.active {
@@ -183,7 +189,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 .navbar .order-lg-3 {
   display: flex !important;
   align-items: center !important;
-  height: 100%;
+  height: 85px !important; /* Match navbar height */
 }
 
 .navbar .btn-link {
