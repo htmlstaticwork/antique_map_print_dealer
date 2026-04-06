@@ -48,7 +48,7 @@
                         <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                             RTL
                         </button>
-                        <div class="d-none d-lg-flex gap-2">
+                        <div class="d-none d-lg-flex gap-2 navbar-cta">
                         <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
                         <a href="register.html" class="btn btn-outline-primary px-3 py-2"
                             style="font-size: 0.75rem;">Join Client List</a>
@@ -93,6 +93,10 @@
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
+            <div class="mt-auto pt-4 border-top border-secondary border-opacity-25">
+                <a href="login.html" class="btn btn-primary w-100 mb-2">Login</a>
+                <a href="register.html" class="btn btn-outline-primary w-100">Join Client List</a>
+            </div>
         </div>
     </div>
 
@@ -103,10 +107,10 @@
                 <p class="lead col-lg-8 mx-auto mt-4 opacity-100">Analysis of declassified acquisitions and historical investigations.</p>
                 <!-- Search Box -->
                 <div class="col-lg-6 mx-auto mt-5">
-                    <div class="input-group">
+                    <div class="d-flex flex-column flex-lg-row gap-3 blog-search-group">
                         <input type="text" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="SEARCH_DATABASE">
+                        <button class="btn btn-primary px-5 py-2">Execute Query</button>
                     </div>
-                     <button class="btn btn-primary mt-3 px-5 py-2">Execute Query</button>
                 </div>
             </div>
         </section>
@@ -134,7 +138,7 @@
                         </div>
                     </div>
                     <!-- 3rd card centered on tab view -->
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 mx-md-auto mx-lg-0">
                         <div class="briefing-card h-100">
                              <img src="assets/images/forensic_nautical_jpg_1774976991789.jpg" class="img-fluid mb-4 opacity-75 rounded" alt="Roman Fragment" style="height: 200px; width: 100%; object-fit: cover;">
                             <span class="stamp-red mb-3">Case ID: MP-112</span>

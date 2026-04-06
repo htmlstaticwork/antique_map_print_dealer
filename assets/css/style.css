@@ -5,7 +5,6 @@
   Primary: #0a0a0a (Void Black)
   Secondary: #ffffff (Pure White)
   Accent: #d4af37 (Sovereign Gold)
-  Surface: #161616 (Deep Carbon)
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap');
@@ -18,22 +17,22 @@
 [data-bs-theme="dark"] {
   --primary-color: #0a0a0a;
   --secondary-color: #ffffff;
-  --bg-dark: #000000;
-  --surface-color: #111111;
+  --bg-dark: #0a0a0a;
+  --surface-color: #0a0a0a;
   --text-primary: #ffffff;
   --text-secondary: #d4af37;
   --border-color: rgba(212, 175, 55, 0.3);
-  --glass-bg: rgba(0, 0, 0, 0.95);
+  --glass-bg: rgba(10, 10, 10, 0.95);
 }
 
 [data-bs-theme="light"] {
   --primary-color: #ffffff;
-  --secondary-color: #000000;
+  --secondary-color: #0a0a0a;
   --bg-dark: #ffffff;
-  --surface-color: #f8f8f8;
-  --text-primary: #000000;
+  --surface-color: #ffffff;
+  --text-primary: #0a0a0a;
   --text-secondary: #d4af37;
-  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(10, 10, 10, 0.1);
   --glass-bg: rgba(255, 255, 255, 0.98);
 }
 
@@ -59,6 +58,7 @@ body {
   background-color: var(--surface-color) !important;
   border-color: var(--border-color) !important;
   color: var(--text-primary) !important;
+  height: 100%;
 }
 
 .bg-light {
@@ -67,6 +67,10 @@ body {
 
 .bg-dark {
   background-color: var(--bg-dark) !important;
+}
+
+.bg-black {
+  background-color: #0a0a0a !important;
 }
 
 h1, h2, h3, h4, h5, h6, .display-font, .card-title {
@@ -104,7 +108,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   color: var(--text-primary) !important;
   padding: 0.5rem 1rem !important;
   transition: color var(--transition-smooth);
-  position: relative; /* Added for active indicator */
+  position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -114,11 +118,12 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 .navbar-nav .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: -2px; /* Adjusted */
+  bottom: 0px;
   left: 1rem;
   right: 1rem;
-  height: 2px;
+  height: 3px;
   background-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 .offcanvas-body .nav-link.active {
@@ -141,7 +146,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(0deg, var(--bg-dark) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(0deg, var(--bg-dark) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.8) 100%);
   z-index: 1;
 }
 
@@ -152,7 +157,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 
 .display-1, .display-2, .display-3 {
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
@@ -183,7 +188,6 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 }
 
 .card {
-  background: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: 0;
   transition: all var(--transition-smooth);
@@ -203,76 +207,90 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 .btn-primary {
   background: var(--accent-color);
   border: 1px solid var(--accent-color);
-  color: #000 !important;
+  color: #0a0a0a !important;
 }
 
-.btn-primary:hover {
-  background: transparent;
+.btn-primary:hover, .btn-hover-accent:hover {
+  background: transparent !important;
   color: var(--accent-color) !important;
-  border-color: var(--accent-color); /* Added border color on hover */
+  border-color: var(--accent-color);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
 
 .btn-outline-primary:hover {
   background: var(--accent-color) !important;
-  color: #000 !important;
+  color: #0a0a0a !important;
+}
+
+.btn-dark {
+  background: #0a0a0a;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 .btn-dark:hover {
   background: var(--accent-color) !important;
-  color: #000 !important;
+  color: #0a0a0a !important;
 }
 
 /* Site-wide link hover styles */
-a.link-hover, .btn-link {
+a.link-hover, .btn-link, .auth-link {
   text-decoration: none;
   transition: color var(--transition-smooth);
 }
 
-a.link-hover:hover {
+a.link-hover:hover, .btn-link:hover, .auth-link:hover {
   color: var(--accent-color) !important;
+  text-decoration: underline !important;
 }
 
 /* --- Footer: Absolute Domain --- */
 footer {
-  background: #000;
+  background: #0a0a0a;
   border-top: 1px solid var(--border-color);
   padding: 60px 0 30px;
+  color: #ffffff;
 }
 
 /* --- Responsive Tuning --- */
 @media (max-width: 1024px) {
   .navbar-nav {
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
   }
-  .d-lg-flex.gap-2 { /* Hide login/signup buttons in navbar on tab/tablet view in navbar */
+  
+  /* Defect 4: Hiding login/signup buttons on tab view */
+  .d-lg-flex.gap-2.navbar-cta { 
     display: none !important;
   }
+  
   .navbar-expand-lg .navbar-nav {
     flex-direction: column !important;
     background: var(--glass-bg);
   }
+  
   .navbar-expand-lg .navbar-collapse {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    padding: 1rem;
+    padding: 2rem;
     background: var(--glass-bg);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--accent-color);
   }
-  .navbar-toggler {
-    display: block !important;
-  }
-  .collapse:not(.show) {
-    display: none !important;
-  }
-}
 
-@media (max-width: 1024px) {
-  .centered-title, h1, h2 { text-align: center !important; }
+  /* Defect 30: Navbar Alignment at 1024px */
+  .navbar .container {
+    justify-content: space-between;
+  }
+
+  /* Defect 11 & 24: Centering headings */
+  .centered-title, h1, h2, h3, .section-title { text-align: center !important; }
+  .section-title::after { left: 50% !important; transform: translateX(-50%) !important; }
+  
+  /* Defect 12: Meet Our Curators overlap fix */
+  .curator-img { margin-bottom: 2rem; }
 }
 
 @media (max-width: 991.98px) {
@@ -282,56 +300,53 @@ footer {
   .hero-content .btn {
     margin: 0.5rem auto;
   }
-  .display-1 { font-size: 3.5rem !important; }
-}
-
-@media (max-width: 768px) {
-  .display-1 { font-size: 2.8rem !important; }
-  .display-2 { font-size: 2.2rem !important; }
-  .display-3 { font-size: 1.8rem !important; }
+  .display-1 { font-size: 3rem !important; }
   
+  /* Defect 15, 16, 22, 23: Alignment fixes for Mobile/Tab */
   .responsive-center {
     text-align: center !important;
     justify-content: center !important;
   }
   .responsive-center .btn {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block !important;
-    width: fit-content;
+    margin: 1rem auto !important;
+  }
+  
+  /* Defect 17: Search Box Button pos */
+  .blog-search-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Defect 25: Card alignment */
+  .card {
+      max-width: 100%;
+      margin: 0 auto;
   }
 }
 
-@media (max-width: 575.98px) {
-  .display-1 { font-size: 2.2rem !important; }
+@media (max-width: 768px) {
+  .display-1 { font-size: 2.5rem !important; }
+  .display-2 { font-size: 2rem !important; }
+  .display-3 { font-size: 1.6rem !important; }
+  
   .hero-content .btn {
     width: 100% !important;
     margin-bottom: 1rem !important;
   }
 }
 
-/* Contrast fix for dark mode hero text */
-[data-bs-theme="dark"] .hero, 
-[data-bs-theme="dark"] .hero-2, 
-[data-bs-theme="dark"] .hero-about, 
-[data-bs-theme="dark"] .hero-services, 
-[data-bs-theme="dark"] .hero-blog, 
-[data-bs-theme="dark"] .hero-pricing, 
-[data-bs-theme="dark"] .hero-contact {
-  text-shadow: 0 2px 15px rgba(0,0,0,0.9);
+/* Defect 32: Contrast fixes */
+[data-bs-theme="dark"] .hero-content h1, 
+[data-bs-theme="dark"] .hero-content p {
+  text-shadow: 0 4px 20px rgba(0,0,0,1);
 }
 
-.auth-card a:hover {
-  text-decoration: underline !important;
-  color: var(--accent-color) !important;
-}
-
-[data-bs-theme="dark"] .hero-2 h1,
-[data-bs-theme="dark"] .hero-2 p {
-  text-shadow: 0 2px 10px rgba(0,0,0,1);
-  color: #fff !important; /* Forces high contrast white */
-}
-
-.ls-2 { letter-spacing: 2px; }
 .transition-smooth { transition: all var(--transition-smooth); }
 .fs-tiny { font-size: 0.7rem; }
+.ls-2 { letter-spacing: 2px; }
+
+/* Defect 26: Button to right corner */
+.btn-right-corner {
+    display: flex;
+    justify-content: flex-end;
+}

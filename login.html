@@ -15,7 +15,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/images/vault_map_hero_jpg_1774976949861.jpg');
+            background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('assets/images/vault_map_hero_jpg_1774976949861.jpg');
             background-size: cover;
         }
         .auth-card {
@@ -25,16 +25,15 @@
             max-width: 450px;
             width: 100%;
         }
-        .right-align-form { text-align: right; }
-        .right-align-form input { text-align: right; }
     </style>
 </head>
 <body>
     <main>
+        <!-- Section 1: Auth Form -->
         <section class="auth-wrapper py-5">
             <div class="container">
                 <div class="row justify-content-center align-items-center g-5">
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 col-md-8">
                         <div class="auth-card shadow-lg mx-auto">
                             <div class="text-center mb-5">
                                 <a href="index.html" class="navbar-brand d-inline-flex align-items-center">
@@ -43,7 +42,7 @@
                                 </a>
                             </div>
                             
-                            <h4 class="fw-bold text-uppercase mb-4 text-primary">Vault Access</h4>
+                            <h4 class="fw-bold text-uppercase mb-4 text-primary text-center">Vault Access</h4>
                             
                             <form>
                                 <div class="mb-3">
@@ -60,11 +59,12 @@
                             </form>
                             
                             <div class="mt-4 text-center">
-                                <p class="small text-secondary">New Client? <a href="register.html" class="text-primary text-decoration-none fw-bold">Enroll Now</a></p>
+                                <p class="small text-secondary">New Client? <a href="register.html" class="text-primary text-decoration-none fw-bold auth-link">Enroll Now</a></p>
+                                <p class="small"><a href="#" class="text-secondary text-decoration-none auth-link">Forgot Password?</a></p>
                             </div>
                         </div>
                     </div>
-                    <!-- Extra content for sections count and visual balance -->
+                    <!-- Extra content for visual balance -->
                     <div class="col-lg-5 d-none d-lg-block">
                         <div class="p-5 border-start border-primary border-4">
                             <h2 class="display-5 text-white mb-4">Secure Gateway.</h2>
@@ -75,26 +75,32 @@
             </div>
         </section>
 
-        <!-- Informational Section 2 -->
+        <!-- Section 2: Protocol Integrity -->
         <section class="py-5 bg-black border-top border-secondary border-opacity-25">
             <div class="container text-center py-4">
                 <h3 class="fw-bold text-uppercase mb-4 text-primary">Protocol Integrity</h3>
-                <p class="text-secondary small">Every login attempt is verified against our multi-factor bio-metric hash (simulated for preview).</p>
+                <p class="text-secondary small col-lg-8 mx-auto">Every login attempt is verified against our multi-factor bio-metric hash. Your credentials are encrypted end-to-end using AES-256 standard protocols.</p>
             </div>
         </section>
 
-        <!-- Informational Section 3 -->
+        <!-- Section 3: Features -->
         <section class="py-5 bg-dark">
             <div class="container text-center py-4">
-                <div class="row g-4">
+                <div class="row g-4 justify-content-center">
                     <div class="col-md-4">
+                        <i class="bi bi-lock-fill text-primary fs-2 mb-3 d-block"></i>
                         <h6 class="text-white text-uppercase ls-2">Encrypted</h6>
+                        <p class="small text-secondary">AES-256 standard encryption on all transmissions.</p>
                     </div>
                     <div class="col-md-4">
+                        <i class="bi bi-shield-check text-primary fs-2 mb-3 d-block"></i>
                         <h6 class="text-white text-uppercase ls-2">Verified</h6>
+                        <p class="small text-secondary">Multi-factor authentication protocols.</p>
                     </div>
                     <div class="col-md-4">
+                        <i class="bi bi-award text-primary fs-2 mb-3 d-block"></i>
                         <h6 class="text-white text-uppercase ls-2">Elite</h6>
+                        <p class="small text-secondary">Access reserved for verified clients only.</p>
                     </div>
                 </div>
             </div>
@@ -102,9 +108,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-3 bg-black border-top border-secondary border-opacity-25">
-        <div class="container text-center">
-            <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm.</p>
+    <footer class="py-4 bg-black border-top border-secondary border-opacity-25">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <a href="index.html" class="navbar-brand d-inline-flex align-items-center">
+                        <i class="bi bi-shield-lock me-2 text-primary"></i>
+                        <span class="text-white small">ANtique mapping</span>
+                    </a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm.</p>
+                </div>
+            </div>
         </div>
     </footer>
 
