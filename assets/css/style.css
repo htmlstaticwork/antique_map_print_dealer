@@ -41,8 +41,31 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
   line-height: 1.6;
-  transition: background-color var(--transition-smooth), color var(--transition-smooth);
+  transition: background-color var(--transition-smooth), color var(--text-primary) var(--transition-smooth);
   overflow-x: hidden;
+  text-align: center; /* Global centering default */
+}
+
+.text-theme {
+  color: var(--text-primary) !important;
+}
+
+.bg-theme {
+  background-color: var(--bg-dark) !important;
+}
+
+.responsive-center {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.responsive-center .row {
+  justify-content: center !important;
+}
+
+.responsive-center .col-lg-8, .responsive-center .col-lg-6 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Force high-contrast theme-aware colors site-wide */
@@ -52,6 +75,11 @@ body {
 
 .text-primary, .text-gradient {
   color: var(--accent-color) !important;
+}
+
+/* Redefine bootstrap utilities to be theme-aware for visibility */
+.text-white, .text-black, .text-dark, .text-light {
+  color: var(--text-primary) !important;
 }
 
 .card, .offcanvas {
@@ -362,10 +390,6 @@ footer {
   .display-1 { font-size: 3rem !important; }
   
   /* Defect 15, 16, 22, 23: Alignment fixes for Mobile/Tab */
-  .responsive-center {
-    text-align: center !important;
-    justify-content: center !important;
-  }
   .responsive-center .btn {
     margin: 1rem auto !important;
   }
