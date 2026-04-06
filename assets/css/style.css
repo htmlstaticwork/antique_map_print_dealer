@@ -53,7 +53,10 @@ body {
   line-height: 1.6;
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
   overflow-x: hidden;
-  text-align: center; /* Global centering default */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .text-theme {
@@ -264,7 +267,13 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    display: none !important;
+    display: flex !important; /* Default for mobile/tab */
+}
+
+@media (min-width: 992px) {
+    .navbar .navbar-toggler {
+        display: none !important; /* Hidden on Desktop/Lg Screens */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -452,11 +461,20 @@ footer .form-control:hover {
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
 }
 
-footer .btn-primary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1.5rem !important;
+footer .btn-primary:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] footer .btn-primary:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+[data-bs-theme="light"] footer .btn-primary:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
 }
 
 /* --- Responsive Tuning --- */

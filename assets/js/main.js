@@ -22,9 +22,11 @@ const ThemeManager = {
     },
 
     applySavedState() {
-        const { theme, dir } = this.getSavedState();
+        const { theme } = this.getSavedState();
+        const dir = 'ltr'; // ALWAYS Reset to LTR on refresh/page move per point 18
         document.documentElement.setAttribute('data-bs-theme', theme);
         document.documentElement.setAttribute('dir', dir);
+        localStorage.setItem('dir', dir);
         this.updateBootstrapCSS(dir);
     },
 
