@@ -118,19 +118,19 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   padding: 0 !important;
-  height: 85px !important; /* Fixed robust height */
+  height: 85px !important; 
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
   transition: all var(--transition-smooth);
+  width: 100%;
 }
 
 .navbar .container {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  height: 100% !important;
-  padding: 0 15px !important;
+  height: 85px !important; 
+  max-width: 1320px;
 }
 
 .navbar-brand {
@@ -139,11 +139,12 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   font-weight: 900 !important;
   text-transform: uppercase;
   color: var(--accent-color) !important;
-  height: 100% !important;
-  display: flex !important;
+  height: 85px !important; 
+  display: inline-flex !important;
   align-items: center !important;
   margin: 0 !important;
-  line-height: 1 !important;
+  padding: 0 !important;
+  line-height: 85px !important; 
 }
 
 .navbar-brand i {
@@ -165,9 +166,10 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   padding: 0 1.25rem !important;
   transition: color var(--transition-smooth);
   position: relative;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
-  height: 85px !important; /* Match navbar height */
+  height: 85px !important; 
+  line-height: 85px !important;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -189,7 +191,17 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 .navbar .order-lg-3 {
   display: flex !important;
   align-items: center !important;
-  height: 85px !important; /* Match navbar height */
+  height: 85px !important; 
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.navbar .btn-link, .navbar-cta .btn {
+   display: inline-flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+   height: 40px !important;
+   margin: auto 0 !important;
 }
 
 .navbar .btn-link {
