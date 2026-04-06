@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -28,28 +28,49 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
+
+<script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const savedDir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+            document.documentElement.setAttribute('dir', savedDir);
+            if (savedDir === 'rtl') {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
+                document.head.appendChild(link);
+            }
+        })();
+    </script>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <i class="bi bi-shield-lock me-2 fs-3"></i>
-                    <span>ANtique mapping</span>
+                    <span>Antique Mapping</span>
                 </a>
 
                 <div class="d-flex align-items-center order-lg-3">
-                    <!-- Toggles -->
-                    <button class="btn btn-link text-decoration-none" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
-                        <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
-                    </button>
-                    <button class="btn btn-link text-decoration-none fw-bold" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
-                        RTL
-                    </button>
-                    <div class="d-none d-lg-flex gap-2 navbar-cta">
+                    <!-- Toggles (Visible only on Large Desktop) -->
+                    <div class="d-none d-xl-flex align-items-center gap-2 me-2">
+                        <button class="btn btn-link text-decoration-none" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                            <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                        </button>
+                        <button class="btn btn-link text-decoration-none fw-bold" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                            <span id="rtlLabel">RTL</span>
+                        </button>
+                    </div>
+                    
+                    <div class="navbar-auth-buttons d-none d-xl-flex gap-2">
                         <a href="login.html" class="btn btn-primary">Login</a>
                         <a href="register.html" class="btn btn-outline-primary">Join</a>
                     </div>
+                    
+                    <!-- Hamburger (Visible for screens <= 1199px) -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileMenu">
                         <i class="bi bi-list fs-4"></i>
@@ -58,12 +79,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item d-flex align-items-center">
-                            <a class="nav-link" href="index.html">Home 1</a>
-                            <span class="text-secondary opacity-50">/</span>
-                            <a class="nav-link" href="home-2.html">Home 2</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
+                                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
@@ -73,35 +98,73 @@
             </div>
         </nav>
     </header>
-
     <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas offcanvas-start bg-dark text-theme" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header pb-0 border-bottom border-secondary border-opacity-25 py-3">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
-                <span class="text-white">ANtique mapping</span>
+                <span class="text-theme">Antique Mapping</span>
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4 mt-4">
-                <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link" href="index.html">Home 1</a>
-                    <span class="text-secondary opacity-50">/</span>
-                    <a class="nav-link" href="home-2.html">Home 2</a>
+                <li class="nav-item">
+                    <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#homeSubmenu" role="button" aria-expanded="false" aria-controls="homeSubmenu">
+                        Home <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <div class="collapse ps-3" id="homeSubmenu">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                        </ul>
+                    </div>
                 </li>
-                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
+
+            <!-- Mobile Toggles -->
+            <div class="offcanvas-toggles border-top border-secondary border-opacity-25 pt-4 mb-4">
+                <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Settings</h6>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2" onclick="toggleTheme()" type="button">
+                        <i class="bi bi-moon-fill" id="themeIcon"></i> Theme
+                    </button>
+                    <button class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2" onclick="toggleRTL()" type="button">
+                        <i class="bi bi-translate"></i> <span id="rtlLabel">RTL</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Auth Section (Consolidated here for mobile views) -->
             <div class="mt-auto pt-4 border-top border-secondary border-opacity-25">
                 <a href="login.html" class="btn btn-primary w-100 mb-2">Login</a>
                 <a href="register.html" class="btn btn-outline-primary w-100">Join</a>
             </div>
         </div>
     </div>
+
+<!-- Mobile Auth Section (Consolidated here for mobile views) -->
+            <div class="mt-auto pt-4 border-top border-secondary border-opacity-25">
+                <a href="login.html" class="btn btn-primary w-100 mb-2">Login</a>
+                <a href="register.html" class="btn btn-outline-primary w-100">Join</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Mobile Auth Section (Consolidated here for mobile views) -->
+            <div class="mt-auto pt-4 border-top border-secondary border-opacity-25">
+                <a href="login.html" class="btn btn-primary w-100 mb-2">Login</a>
+                <a href="register.html" class="btn btn-outline-primary w-100">Join</a>
+            </div>
+        </div>
+    </div>
+
+</div>
 
     <main>
         <section class="hero-services d-flex align-items-center">
@@ -147,7 +210,7 @@
         </section>
 
         <!-- Workflow -->
-        <section class="py-5 bg-black text-white">
+        <section class="py-5 bg-black text-theme">
             <div class="container py-lg-5">
                 <div class="text-center mb-5">
                     <h2 class="display-5 fw-bold text-uppercase centered-title">The Investigative Workflow</h2>
@@ -196,77 +259,131 @@
                 </div>
             </div>
         </section>
-    </main>
+        <!-- Secure Protocol (Call to Action) -->
+        <section class="py-5 bg-theme text-theme">
+            <div class="container py-lg-4 text-center">
+                <h2 class="display-3 fw-bold mb-4 text-theme">Secure Intake Protocol.</h2>
+                <p class="lead mb-5 col-lg-8 mx-auto fw-bold text-theme">Ready to secure a historical asset? Our curators are standing by to guide your private acquisition through our network.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                    <a href="contact.html" class="btn btn-dark px-5 py-3">Book Secure Consultation</a>
+                    <a href="pricing.html" class="btn btn-outline-primary px-5 py-3">View Services Matrix</a>
+                </div>
+            </div>
+        </section>
+            <!-- Expert Appraisal Section -->
+        <section class="py-5 bg-dark border-top border-secondary border-opacity-25">
+            <div class="container py-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 order-lg-2">
+                        <img src="assets/images/historical_map_analysis.png" class="img-fluid rounded shadow-lg" alt="Historical Map Analysis" style="height: 400px; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="pe-lg-4 text-center text-lg-start">
+                            <span class="badge bg-primary mb-3 fs-tiny text-uppercase px-3 py-2">Service Matrix</span>
+                            <h2 class="display-5 fw-bold mb-4 text-theme">Expert Evaluation & Authenticity Protocols.</h2>
+                            <p class="lead text-secondary mb-4">Leveraging deep historical context, our dedicated curators employ advanced forensic measures to authenticate your rare maps.</p>
+                            <ul class="list-unstyled text-secondary mb-5 ms-md-3">
+                                <li class="mb-3 d-flex align-items-center justify-content-center"><i class="bi bi-patch-check text-primary me-3 fs-5"></i> High-resolution microscopic analysis.</li>
+                                <li class="mb-3 d-flex align-items-center justify-content-center"><i class="bi bi-patch-check text-primary me-3 fs-5"></i> Archival pigment testing.</li>
+                                <li class="d-flex align-items-center justify-content-center"><i class="bi bi-patch-check text-primary me-3 fs-5"></i> Absolute lineage certification.</li>
+                            </ul>
+                            <a href="services.html" class="btn btn-outline-primary px-5 py-3">View Full Protocol</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- The Vault Section -->
+        <section class="py-5 bg-black py-lg-5 border-top border-secondary border-opacity-25">
+            <div class="container py-lg-4 text-center">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8">
+                        <h2 class="display-4 fw-bold text-uppercase text-theme">The Collector's Arsenal.</h2>
+                        <p class="lead text-secondary mt-3">Elite navigational instruments and drafting tools from the golden age of discovery. We procure beyond just parchment.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="position-relative overflow-hidden rounded shadow-lg">
+                            <img src="assets/images/antique_cartography_tools.png" class="img-fluid w-100 transition-smooth hover-zoom" alt="Cartography Tools" style="height: 500px; object-fit: cover;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4 bg-dark bg-opacity-75 text-start">
+                                <h4 class="text-theme fw-bold mb-1">Antique Calipers & Drafting Compass</h4>
+                                <p class="text-secondary small mb-0">Declassified from a private 17th-century European royal collection.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 text-center">
+                    <a href="pricing.html" class="btn btn-primary px-5 py-3 btn-hover-accent">Explore Physical Assets</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
     <!-- Footer -->
-    <footer class="mt-auto">
+    <footer class="mt-auto py-5">
         <div class="container">
-            <div class="row g-5 mb-5 overflow-hidden">
-                <div class="col-lg-4 responsive-center">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-12 text-center mb-5">
                     <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
                         <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
-                        <span>ANtique mapping</span>
+                        <span class="text-theme">Antique Mapping</span>
                     </a>
                     <p class="text-secondary small mb-4">Elite curators and forensic auditors of historical cartography since 2008.</p>
-                    <div class="d-flex footer-social-icons pt-2">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <div class="d-flex footer-social-icons pt-2 justify-content-center">
+                        <a href="#" class="me-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="me-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="me-4"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">The Firm</h6>
+                <div class="col-md-4 text-center">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">The Firm</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="about.html" class="text-secondary small text-decoration-none transition-smooth link-hover">About Protocol</a></li>
                         <li class="mb-2"><a href="services.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Expert Services</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Intelligence Feed</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Client Services</h6>
+                <div class="col-md-4 text-center">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">Client Services</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="contact.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Secure Channel</a></li>
                         <li class="mb-2"><a href="pricing.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Asset Valuation</a></li>
                         <li class="mb-2"><a href="register.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Credential Intake</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-3">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Newsletter</h6>
-                    <p class="text-secondary small mb-4">Subscribe for declassified reports.</p>
+                <div class="col-md-4 text-center">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">Newsletter</h6>
+                    <p class="text-secondary small mb-4 text-center">Subscribe for declassified asset reports.</p>
                     <div class="input-group">
-                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="EMAIL ADDRESS">
-                        <button class="btn btn-primary px-3 py-2" type="button"><i class="bi bi-send text-black"></i></button>
+                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
+                        <button class="btn btn-primary px-3" type="button"><i class="bi bi-send text-black"></i></button>
                     </div>
                 </div>
             </div>
             <hr class="border-secondary opacity-25">
-            <div class="text-center py-3">
-                <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm.</p>
+            <div class="row align-items-center py-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm. All assets encrypted and secured.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end pt-3 pt-md-0">
+                    <ul class="list-inline mb-0 fs-tiny text-secondary">
+                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Privacy_Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Terms_of_Engagement</a></li>
+                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Compliance_Matrix</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-bs-theme', newTheme);
-            document.querySelectorAll('#themeIcon').forEach(icon => {
-                if(newTheme === 'light') {
-                    icon.classList.remove('bi-moon-fill');
-                    icon.classList.add('bi-sun-fill');
-                } else {
-                    icon.classList.remove('bi-sun-fill');
-                    icon.classList.add('bi-moon-fill');
-                }
-            });
-        }
-        function toggleRTL() {
-            const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
-            document.documentElement.setAttribute('dir', isRtl ? 'ltr' : 'rtl');
-        }
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+

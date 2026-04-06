@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+import os
+import re
 
-const dir = __dirname;
-const files = fs.readdirSync(dir).filter(f => f.endsWith('.html'));
+dir_path = os.getcwd()
+files = [f for f in os.listdir(dir_path) if f.endswith('.html')]
 
-const toggleHtml = `
+toggle_html = """
                         <!-- Toggles -->
                         <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                             <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
@@ -12,9 +12,9 @@ const toggleHtml = `
                         <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                             RTL
                         </button>
-                        `;
+                        """
 
-const headScriptHtml = `
+head_script_html = """
     <script>
         // Apply theme and direction immediately to avoid flash
         (function() {
@@ -24,9 +24,9 @@ const headScriptHtml = `
             document.documentElement.setAttribute('dir', savedDir);
         })();
     </script>
-</head>`;
+</head>"""
 
-const scriptHtml = `
+script_html = """
     <script>
         function updateIcons() {
             const currentTheme = document.documentElement.getAttribute('data-bs-theme');
@@ -60,27 +60,42 @@ const scriptHtml = `
         document.addEventListener('DOMContentLoaded', updateIcons);
     </script>
 </body>
-`;
+"""
 
-files.forEach(file => {
-    const filePath = path.join(dir, file);
-    let content = fs.readFileSync(filePath, 'utf-8');
+for file in files:
+    file_path = os.path.join(dir_path, file)
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
 
-    // Safely remove previously added toggles/script/headScript if they exist
-    content = content.replace(/<!-- Toggles -->[\s\S]*?RTL\s*<\/button>\s*/, '');
-    content = content.replace(/<script>\s*\/\/ Apply theme and direction[\s\S]*?<\/script>\s*<\/head>/, '</head>');
-    content = content.replace(/<script>\s*function updateIcons\([\s\S]*?<\/script>\s*<\/body>/, '</body>');
-    content = content.replace(/<script>\s*function toggleTheme\([\s\S]*?<\/script>\s*<\/body>/, '</body>');
+    # Safely remove previously added toggles/script/headScript if they exist
+    content = re.sub(r'<!-- Toggles -->[\s\S]*?RTL\s*</button>\s*', '', content)
+    content = re.sub(r'<script>\s*// Apply theme and direction[\s\S]*?</script>\s*</head>', '</head>', content)
+    content = re.sub(r'<script>\s*function updateIcons\([\s\S]*?</script>\s*</body>', '</body>', content)
+    content = re.sub(r'<script>\s*function toggleTheme\([\s\S]*?</script>\s*</body>', '</body>', content)
     
-    // Insert head script
-    content = content.replace(/<\/head>/, headScriptHtml);
+    # Insert head script
+    content = content.replace('</head>', head_script_html)
 
-    // Insert toggle buttons
-    content = content.replace(/<div class="d-none d-sm-flex/, toggleHtml + '<div class="d-none d-sm-flex');
+    # Insert toggle buttons
+    # We want to insert before <div class="d-none d-sm-flex (or d-lg-flex based on index.html)
+    # Looking at index.html: <div class="d-none d-lg-flex gap-2 navbar-cta">
+    # Looking at other pages might vary. Let's try to match the navbar pattern.
+    
+    # In index.html it was:
+    # <div class="d-flex align-items-center order-lg-3">
+    #     <!-- Toggles -->
+    #     ...
+    
+    # Let's see how update_nav.js did it:
+    # content = content.replace(/<div class="d-none d-sm-flex/, toggleHtml + '<div class="d-none d-sm-flex');
+    
+    content = content.replace('<div class="d-none d-lg-flex', toggle_html + '<div class="d-none d-lg-flex')
+    content = content.replace('<div class="d-none d-sm-flex', toggle_html + '<div class="d-none d-sm-flex')
 
-    // Insert script before </body>
-    content = content.replace(/<\/body>/, scriptHtml);
+    # Insert script before </body>
+    content = content.replace('</body>', script_html)
 
-    fs.writeFileSync(filePath, content);
-});
-console.log('Updated all HTML files.');
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+print('Updated all HTML files with Python script.')
