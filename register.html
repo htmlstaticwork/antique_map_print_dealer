@@ -46,7 +46,7 @@
                             
                             <h4 class="fw-bold text-uppercase mb-4 text-primary text-center ls-2">Enrollment</h4>
                             
-                            <form>
+                            <form class="text-start">
                                 <div class="mb-4">
                                     <label class="form-label small text-secondary">NAME_ID</label>
                                     <input type="text" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="IDENT_STRING">
@@ -60,13 +60,20 @@
                                     <input type="password" class="form-control bg-dark border-secondary text-white py-3 px-4" placeholder="••••••••">
                                 </div>
                                 <div class="mb-4">
-                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Join</button>
+                                    <div class="form-check">
+                                        <input class="form-check-input bg-dark border-secondary" type="checkbox" id="termsCheck" required>
+                                        <label class="form-check-label small text-secondary" for="termsCheck">
+                                            I accept the <a href="#" class="text-primary text-decoration-none fw-bold auth-link">Terms and Conditions</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <button class="btn btn-primary w-100 py-3 text-uppercase fw-bold ls-2 btn-hover-accent">Join Now</button>
                                 </div>
                             </form>
                             
                             <div class="mt-5 text-center pt-3 border-top border-secondary border-opacity-10">
-                                <p class="small text-secondary mb-2">Existing Client? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link">Access Vault</a></p>
-                                <p class="small"><a href="#" class="text-secondary text-decoration-none auth-link">Terms & Conditions</a></p>
+                                <p class="small text-secondary mb-0">Existing Client? <a href="login.html" class="text-primary text-decoration-none fw-bold auth-link">Access Vault</a></p>
                             </div>
                         </div>
                     </div>
