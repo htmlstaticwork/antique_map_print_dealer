@@ -38,22 +38,21 @@
                     <span>ANtique mapping</span>
                 </a>
 
-                <div class="d-flex align-items-center order-lg-3 gap-2">
-                                            <!-- Toggles -->
-                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 d-flex align-items-center" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
-                            <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
-                        </button>
-                        <button class="btn btn-link text-decoration-none text-secondary p-0 me-3 fw-bold d-flex align-items-center" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
-                            RTL
-                        </button>
-                        <div class="d-none d-lg-flex gap-2 navbar-cta">
-                        <a href="login.html" class="btn btn-primary px-3 py-2" style="font-size: 0.75rem;">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary px-3 py-2"
-                            style="font-size: 0.75rem;">Join</a>
+                <div class="d-flex align-items-center order-lg-3">
+                    <!-- Toggles -->
+                    <button class="btn btn-link text-decoration-none" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                    </button>
+                    <button class="btn btn-link text-decoration-none fw-bold" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                        RTL
+                    </button>
+                    <div class="d-none d-lg-flex gap-2 navbar-cta">
+                        <a href="login.html" class="btn btn-primary">Login</a>
+                        <a href="register.html" class="btn btn-outline-primary">Join</a>
                     </div>
-                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileMenu">
-                        <i class="bi bi-list fs-2 text-white"></i>
+                        <i class="bi bi-list fs-4"></i>
                     </button>
                 </div>
 
@@ -111,34 +110,30 @@
             <div class="container py-lg-5">
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6 col-lg-4">
-                        <div class="service-card-matrix h-100">
+                        <div class="service-card-matrix h-100 d-flex flex-column text-center">
                             <i class="bi bi-search text-primary fs-1 mb-4 d-block"></i>
                             <h3 class="fw-bold mb-3">Provenance Audit</h3>
-                            <p class="text-secondary small mb-4">Strategic deep-dives into the chain of command, ensuring uninterrupted lineage.</p>
-                            <img src="assets/images/microscopic_analysis.png" class="img-fluid mb-4 rounded opacity-75" alt="Audit" style="height: 150px; width: 100%; object-fit: cover;">
-                            <a href="#" class="btn btn-outline-primary btn-sm px-4 w-100">Initiate</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 border-primary">
-                        <div class="service-card-matrix h-100 border-primary border-2">
-                            <i class="bi bi-frame text-primary fs-1 mb-4 d-block"></i>
-                            <h3 class="fw-bold mb-3">Museum Grade Framing</h3>
-                            <p class="text-secondary small mb-4">Specialized UV-protective glazing and acid-free archival mounting.</p>
-                            <img src="assets/images/restoration_process_jpg_1774975886753.jpg" class="img-fluid mb-4 rounded opacity-75" alt="Framing" style="height: 150px; width: 100%; object-fit: cover;">
-                            <div class="text-center responsive-center">
-                                <a href="contact.html" class="btn btn-primary btn-sm px-4 w-100 btn-hover-accent">Request Framing</a>
-                            </div>
+                            <p class="text-secondary small mb-4 flex-grow-1">Strategic deep-dives into the chain of command, ensuring uninterrupted lineage.</p>
+                            <img src="assets/images/microscopic_analysis.png" class="img-fluid mb-4 rounded opacity-75" alt="Audit" style="height: 180px; width: 100%; object-fit: cover;">
+                            <a href="contact.html" class="btn btn-primary px-4 w-100">Initiate</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="service-card-matrix h-100">
+                        <div class="service-card-matrix h-100 d-flex flex-column text-center">
+                            <i class="bi bi-frame text-primary fs-1 mb-4 d-block"></i>
+                            <h3 class="fw-bold mb-3">Museum Grade Framing</h3>
+                            <p class="text-secondary small mb-4 flex-grow-1">Specialized UV-protective glazing and acid-free archival mounting.</p>
+                            <img src="assets/images/restoration_process_jpg_1774975886753.jpg" class="img-fluid mb-4 rounded opacity-75" alt="Framing" style="height: 180px; width: 100%; object-fit: cover;">
+                            <a href="contact.html" class="btn btn-primary px-4 w-100">Request Framing</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card-matrix h-100 d-flex flex-column text-center">
                             <i class="bi bi-person-badge text-primary fs-1 mb-4 d-block"></i>
                             <h3 class="fw-bold mb-3">Collector Concierge</h3>
-                            <p class="text-secondary small mb-4">Personal acquisition mapping and portfolio management.</p>
-                            <img src="assets/images/collector_consultation.png" class="img-fluid mb-4 rounded opacity-75" alt="Concierge" style="height: 150px; width: 100%; object-fit: cover;">
-                            <div class="text-center responsive-center">
-                                <a href="contact.html" class="btn btn-outline-primary btn-sm px-4 w-100">Direct Link</a>
-                            </div>
+                            <p class="text-secondary small mb-4 flex-grow-1">Personal acquisition mapping and portfolio management.</p>
+                            <img src="assets/images/collector_consultation.png" class="img-fluid mb-4 rounded opacity-75" alt="Concierge" style="height: 180px; width: 100%; object-fit: cover;">
+                            <a href="contact.html" class="btn btn-primary px-4 w-100">Direct Link</a>
                         </div>
                     </div>
                 </div>

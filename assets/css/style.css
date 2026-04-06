@@ -214,35 +214,39 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   height: 85px !important; 
   padding: 0 !important;
   margin: 0 !important;
+  gap: 0.75rem !important; /* Consistent spacing */
 }
 
-.navbar .btn-link, .navbar-cta .btn {
+.navbar .btn-link, .navbar .navbar-toggler, .navbar-cta .btn {
    display: inline-flex !important;
    align-items: center !important;
    justify-content: center !important;
-   height: 40px !important;
-   margin: auto 0 !important;
+   height: 44px !important;
+   margin: 0 !important;
+   padding: 0 !important;
+   transition: all var(--transition-smooth);
 }
 
-.navbar .btn-link {
-  font-size: 0.85rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px;
-  color: var(--accent-text) !important;
-  padding: 0 10px !important;
-  display: flex !important;
-  align-items: center !important;
+.navbar .btn-link, .navbar .navbar-toggler {
+    width: 44px !important;
+    color: var(--text-secondary) !important;
+}
+
+.navbar .btn-link:hover, .navbar .navbar-toggler:hover {
+    color: var(--accent-text) !important;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.navbar .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .navbar-cta .btn {
-  padding: 0.6rem 0 !important;
   font-size: 0.7rem !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100px !important; /* Reduced width for a more compact navbar */
-  height: 40px !important;  /* Force identical height */
-  align-self: center;
+  width: 100px !important; 
+  height: 44px !important;
 }
 
 .footer-social-icons {
@@ -436,6 +440,13 @@ footer {
   
   /* Defect 12: Meet Our Curators overlap fix */
   .curator-img { margin-bottom: 2rem; }
+
+  /* Tab 1024 Optimization */
+  .display-1 { font-size: 3.5rem !important; }
+  .display-2 { font-size: 3rem !important; }
+  .hero, .hero-2, .hero-about, .hero-services, .hero-blog, .hero-pricing, .hero-contact {
+    padding: 100px 0 60px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -466,13 +477,42 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .display-1 { font-size: 2.5rem !important; }
-  .display-2 { font-size: 2rem !important; }
-  .display-3 { font-size: 1.6rem !important; }
+  .display-1 { font-size: 2.8rem !important; }
+  .display-2 { font-size: 2.2rem !important; }
+  .display-3 { font-size: 1.8rem !important; }
   
   .hero-content .btn {
     width: 100% !important;
     margin-bottom: 1rem !important;
+  }
+
+  /* Padding adjustments for mobile */
+  .auth-card {
+    padding: 2rem !important;
+  }
+  
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Mobile 360px Optimization */
+@media (max-width: 360px) {
+  .display-1 { font-size: 2rem !important; }
+  .display-2 { font-size: 1.8rem !important; }
+  .display-3 { font-size: 1.5rem !important; }
+  
+  .navbar-brand span {
+    font-size: 0.9rem !important;
+  }
+  
+  .hero-content p.lead {
+    font-size: 1rem !important;
+  }
+
+  .auth-card {
+    padding: 1.5rem !important;
   }
 }
 
