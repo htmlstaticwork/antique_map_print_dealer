@@ -450,11 +450,16 @@ img {
 
 .offcanvas-auth-section .btn {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
 }
 
 .offcanvas-auth-section .btn:hover {
-    transform: translateX(5px);
+    transform: none !important;
     border-color: var(--accent-color) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2) !important;
 }
 
 .offcanvas-auth-section .btn-primary:hover {
@@ -465,6 +470,19 @@ img {
 .offcanvas-auth-section .btn-outline-secondary:hover {
     background-color: var(--accent-color) !important;
     color: #000 !important;
+}
+
+/* Prevent rounded-circle toggle buttons from shifting on hover */
+.offcanvas-toggles .btn.rounded-circle:hover,
+.navbar .btn-outline-secondary.rounded-circle:hover {
+    transform: none !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Offcanvas body scrollable to prevent overlap */
+.offcanvas-body {
+    overflow-y: auto !important;
+    padding-bottom: 2rem !important;
 }
 
 .footer-social-icons {
@@ -778,6 +796,7 @@ footer .btn-primary:hover {
   
   .hero-content .btn {
     width: 100% !important;
+    max-width: 100% !important;
     margin-bottom: 1rem !important;
   }
 
@@ -789,6 +808,18 @@ footer .btn-primary:hover {
   .py-5 {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
+  }
+
+  /* All section buttons adapt to full width on mobile */
+  section .btn {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+
+  /* Prevent hover lift causing overlap on mobile */
+  .btn:hover {
+    transform: none !important;
   }
 }
 
