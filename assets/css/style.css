@@ -602,6 +602,20 @@ a.link-hover, .btn-link, .auth-link {
   transition: color var(--transition-smooth);
 }
 
+.btn-cta-standard {
+    min-width: 320px !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+@media (max-width: 360px) {
+    .btn-cta-standard {
+        min-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
 a.link-hover:hover, .btn-link:hover, .auth-link:hover {
   color: var(--accent-text) !important;
   text-decoration: underline !important;
