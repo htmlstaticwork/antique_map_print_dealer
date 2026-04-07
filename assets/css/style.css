@@ -580,6 +580,10 @@ img {
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
 
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
 .btn-outline-primary:hover {
   background: var(--accent-color) !important;
   color: var(--btn-text) !important;
@@ -600,20 +604,6 @@ img {
 a.link-hover, .btn-link, .auth-link {
   text-decoration: none;
   transition: color var(--transition-smooth);
-}
-
-.btn-cta-standard {
-    min-width: 320px !important;
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-@media (max-width: 360px) {
-    .btn-cta-standard {
-        min-width: 100% !important;
-        width: 100% !important;
-    }
 }
 
 a.link-hover:hover, .btn-link:hover, .auth-link:hover {

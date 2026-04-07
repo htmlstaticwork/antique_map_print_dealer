@@ -26,11 +26,11 @@ master_header = """
 
                 <div class="d-flex align-items-center order-xl-3">
                     <!-- Desktop Toggles (Visible for XL screens) -->
-                    <div class="d-none d-xl-flex align-items-center gap-3 me-3">
-                        <button class="btn btn-link text-theme p-0" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                    <div class="d-none d-xl-flex align-items-center gap-2 me-3">
+                        <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                             <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
                         </button>
-                        <button class="btn btn-link text-theme p-0" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                        <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                             <i class="bi bi-translate fs-5"></i>
                         </button>
                     </div>
@@ -107,8 +107,8 @@ master_offcanvas = """
                     <a href="login.html" class="btn btn-outline-secondary justify-content-start d-flex align-items-center gap-2">
                         <i class="bi bi-person"></i> Login
                     </a>
-                    <a href="register.html" class="btn btn-primary justify-content-start d-flex align-items-center gap-2">
-                        <i class="bi bi-person-plus text-black"></i> <span class="text-black">Join Network</span>
+                    <a href="register.html" class="btn btn-primary justify-content-center text-uppercase fw-bold d-flex align-items-center gap-2">
+                        <i class="bi bi-person-plus text-black"></i> <span class="text-black">Join</span>
                     </a>
                 </div>
             </div>
@@ -117,10 +117,10 @@ master_offcanvas = """
             <div class="offcanvas-toggles border-top border-secondary border-opacity-25 pt-4 mb-4">
                 <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Settings</h6>
                 <div class="d-flex gap-3">
-                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                    <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                         <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
                     </button>
-                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                    <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                         <i class="bi bi-translate fs-5"></i>
                     </button>
                 </div>

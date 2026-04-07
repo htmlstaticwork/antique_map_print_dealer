@@ -46,11 +46,11 @@
 
                 <div class="d-flex align-items-center order-xl-3">
                     <!-- Desktop Toggles (Visible for XL screens) -->
-                    <div class="d-none d-xl-flex align-items-center gap-3 me-3">
-                        <button class="btn btn-link text-theme p-0" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                    <div class="d-none d-xl-flex align-items-center gap-2 me-3">
+                        <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                             <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
                         </button>
-                        <button class="btn btn-link text-theme p-0" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                        <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                             <i class="bi bi-translate fs-5"></i>
                         </button>
                     </div>
@@ -70,12 +70,12 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 HOME <i class="bi bi-chevron-down ms-1 small"></i>
                             </a>
                             <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
-                                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+                                <li><a class="dropdown-item active" href="home-2.html">Home 2</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -100,7 +100,7 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4 mt-4">
                 <li class="nav-item">
-                    <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#homeSubmenu" role="button" aria-expanded="false" aria-controls="homeSubmenu">
+                    <a class="nav-link active d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#homeSubmenu" role="button" aria-expanded="false" aria-controls="homeSubmenu">
                         HOME <i class="bi bi-chevron-down"></i>
                     </a>
                     <div class="collapse ps-3" id="homeSubmenu">
@@ -121,11 +121,11 @@
             <div class="offcanvas-auth-section border-top border-secondary border-opacity-25 pt-4 mb-3">
                 <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Account</h6>
                 <div class="d-flex flex-column gap-2 mb-3">
-                    <a href="login.html" class="btn btn-outline-secondary justify-content-start d-flex align-items-center gap-2">
+                    <a href="login.html" class="btn btn-outline-secondary justify-content-center text-uppercase fw-bold d-flex align-items-center gap-2">
                         <i class="bi bi-person"></i> Login
                     </a>
-                    <a href="register.html" class="btn btn-primary justify-content-start d-flex align-items-center gap-2">
-                        <i class="bi bi-person-plus text-black"></i> <span class="text-black">Join Network</span>
+                    <a href="register.html" class="btn btn-primary justify-content-center text-uppercase fw-bold d-flex align-items-center gap-2">
+                        <i class="bi bi-person-plus text-black"></i> <span class="text-black">Join</span>
                     </a>
                 </div>
             </div>
@@ -134,10 +134,10 @@
             <div class="offcanvas-toggles border-top border-secondary border-opacity-25 pt-4 mb-4">
                 <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Settings</h6>
                 <div class="d-flex gap-3">
-                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                    <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                         <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
                     </button>
-                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                    <button class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
                         <i class="bi bi-translate fs-5"></i>
                     </button>
                 </div>
@@ -259,8 +259,8 @@
             <div class="container py-lg-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <div class="p-lg-5 border-start border-primary border-4">
-                            <h2 class="display-3 fw-bold mb-4">The Provenance Audit System.</h2>
+                        <div class="ps-4 py-4 p-lg-5 border-start border-primary border-4">
+                            <h2 class="display-3 fw-bold mb-4 text-uppercase">The Provenance Audit System.</h2>
                             <p class="lead mb-4 fw-bold">Verification is our highest protocol. Every map we exhibit has undergone investigation.</p>
                             <p class="mb-5 opacity-75">We utilize Primary Source Authentication and Spectral Pigment Verification.</p>
                             <a href="about.html" class="btn btn-dark text-theme px-5 py-3">Review Security Methodologies</a>
@@ -395,3 +395,8 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
