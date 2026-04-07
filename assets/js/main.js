@@ -22,21 +22,26 @@ const ThemeManager = {
     },
 
     applySavedState() {
-        const { theme } = this.getSavedState();
-        const dir = 'ltr'; // ALWAYS Reset to LTR on refresh/page move per point 18
+        const { theme, dir } = this.getSavedState();
         document.documentElement.setAttribute('data-bs-theme', theme);
         document.documentElement.setAttribute('dir', dir);
-        localStorage.setItem('dir', dir);
         this.updateBootstrapCSS(dir);
     },
 
     updateBootstrapCSS(dir) {
         const links = document.querySelectorAll('link[href*="bootstrap"]');
         links.forEach(link => {
-            if (dir === 'rtl' && link.href.includes('bootstrap.min.css')) {
-                link.href = link.href.replace('bootstrap.min.css', 'bootstrap.rtl.min.css');
-            } else if (dir === 'ltr' && link.href.includes('bootstrap.rtl.min.css')) {
-                link.href = link.href.replace('bootstrap.rtl.min.css', 'bootstrap.min.css');
+            const href = link.href;
+            if (dir === 'rtl') {
+                // If it's the standard bootstrap, replace it
+                if (href.includes('bootstrap.min.css') && !href.includes('bootstrap.rtl.min.css')) {
+                    link.href = href.replace('bootstrap.min.css', 'bootstrap.rtl.min.css');
+                }
+            } else {
+                // If it's the RTL bootstrap, replace it back
+                if (href.includes('bootstrap.rtl.min.css')) {
+                    link.href = href.replace('bootstrap.rtl.min.css', 'bootstrap.min.css');
+                }
             }
         });
     },
@@ -57,6 +62,43 @@ const ThemeManager = {
         // Update RTL Labels
         document.querySelectorAll('#rtlLabel').forEach(label => {
             label.textContent = currentDir === 'rtl' ? 'LTR' : 'RTL';
+        });
+
+        // Set Active Nav Link
+        this.setActiveNavLink();
+    },
+
+    setActiveNavLink() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navItems = document.querySelectorAll('.nav-link, .dropdown-item');
+        
+        navItems.forEach(item => {
+            const itemPath = item.getAttribute('href');
+            if (!itemPath || itemPath === '#') return;
+
+            // Normalize index.html
+            const isHomeCurrent = currentPath === 'index.html' || currentPath === '';
+            const isHomeItem = itemPath === 'index.html';
+
+            if (itemPath === currentPath || (isHomeCurrent && isHomeItem)) {
+                item.classList.add('active');
+                
+                // If it's a dropdown item, make the parent toggle active
+                if (item.classList.contains('dropdown-item')) {
+                    const dropdown = item.closest('.dropdown-menu');
+                    if (dropdown) {
+                        const toggle = dropdown.previousElementSibling;
+                        if (toggle && toggle.classList.contains('dropdown-toggle')) {
+                            toggle.classList.add('active');
+                        }
+                    }
+                }
+            } else {
+                // DON'T remove active from dropdown-toggle if another sub-item might be active
+                if (!item.classList.contains('dropdown-toggle')) {
+                    item.classList.remove('active');
+                }
+            }
         });
     },
 

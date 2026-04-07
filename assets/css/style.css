@@ -53,7 +53,6 @@ body {
   line-height: 1.6;
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
   overflow-x: hidden;
-  text-align: center;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -148,6 +147,7 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   align-items: center !important;
   transition: all var(--transition-smooth);
   width: 100%;
+  z-index: 1050 !important;
 }
 
 .navbar .container {
@@ -212,6 +212,17 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   margin: 0 !important;
 }
 
+.nav-link.dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px;
+}
+
+/* Remove default bootstrap caret to use custom chevron */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
 .nav-item.d-flex .nav-link {
     padding: 0 0.5rem !important;
 }
@@ -229,6 +240,67 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
   height: 4px;
   background-color: var(--accent-text);
   box-shadow: 0 0 10px var(--accent-text);
+}
+
+/* Dropdown visibility on Desktop Header Hover AND Click */
+@media (min-width: 1200px) {
+    .navbar-nav .nav-item.dropdown:hover > .dropdown-menu,
+    .navbar-nav .nav-item.dropdown .dropdown-menu.show {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+    
+    .navbar-nav .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-top: 0;
+        pointer-events: none;
+    }
+}
+
+.dropdown-menu {
+    background: var(--surface-color) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-width: 200px !important;
+    z-index: 1060 !important;
+    position: absolute !important;
+}
+
+.dropdown-item {
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-primary) !important;
+    padding: 0.75rem 1.25rem !important;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease !important;
+    background: transparent !important;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+    background: rgba(212, 175, 55, 0.15) !important;
+    color: var(--accent-text) !important;
+    padding-left: 1.75rem !important;
+}
+
+.dropdown-item.active::before {
+    content: '▶';
+    font-size: 0.6rem;
+    margin-right: 8px;
+    color: var(--accent-text);
 }
 
 /* Toggles and CTA Alignment */
@@ -286,16 +358,118 @@ h1, h2, h3, h4, h5, h6, .display-font, .card-title {
 }
 
 .navbar-cta .btn {
-  font-size: 0.7rem !important;
-  width: 100px !important; 
-  height: 44px !important;
+    font-size: 0.75rem !important;
+    width: 110px !important;
+    height: 42px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* --- Interactive Elements & Hovers --- */
+.btn, .nav-link, .dropdown-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific Button Hovers */
+.btn-primary:hover {
+  background-color: transparent !important;
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--accent-color) !important;
+  color: #000 !important;
+}
+
+.btn-dark:hover {
+  background-color: var(--accent-color) !important;
+  color: #000 !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Global Card Hover System */
+.card, 
+.product-card, 
+.service-card-matrix, 
+.contact-card, 
+.auth-card, 
+.matrix-border, 
+.vintage-border,
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.card:hover, 
+.product-card:hover, 
+.service-card-matrix:hover, 
+.contact-card:hover, 
+.auth-card:hover, 
+.matrix-border:hover, 
+.vintage-border:hover,
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Image Zoom Effect within Cards */
+.card:hover img, .product-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.9 !important;
+}
+
+img {
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-cta .btn-primary:hover {
+    background-color: transparent !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.navbar-cta .btn-outline-primary:hover {
+    background-color: var(--accent-color) !important;
+    color: #000 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.offcanvas-auth-section .btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.offcanvas-auth-section .btn:hover {
+    transform: translateX(5px);
+    border-color: var(--accent-color) !important;
+}
+
+.offcanvas-auth-section .btn-primary:hover {
+    background-color: transparent !important;
+    color: var(--accent-color) !important;
+}
+
+.offcanvas-auth-section .btn-outline-secondary:hover {
+    background-color: var(--accent-color) !important;
+    color: #000 !important;
 }
 
 .footer-social-icons {
   display: flex !important;
   gap: 1.5rem !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
 }
 
 .footer-social-icons a {
@@ -432,6 +606,32 @@ a.link-hover:hover, .btn-link:hover, .auth-link:hover {
   color: var(--accent-text) !important;
   text-decoration: underline !important;
 }
+
+/* High Contrast Button for Critical Actions */
+.btn-high-contrast {
+    background: var(--text-primary) !important;
+    color: var(--bg-dark) !important;
+    border: 2px solid var(--text-primary) !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-high-contrast:hover {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+}
+
+.footer-social-icons a {
+    margin: 0 !important; /* Use gap from parent instead of margins for consistency */
+}
+
 
 /* --- Footer: Absolute Domain --- */
 footer {

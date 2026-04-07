@@ -17,30 +17,30 @@ master_head_script = """
 master_header = """
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-xl fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <i class="bi bi-shield-lock me-2 fs-3"></i>
                     <span>Antique Mapping</span>
                 </a>
 
-                <div class="d-flex align-items-center order-lg-3">
-                    <!-- Toggles (Visible only on Desktop) -->
-                    <div class="d-none d-lg-flex align-items-center gap-2 me-2">
-                        <button class="btn btn-link text-decoration-none" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                <div class="d-flex align-items-center order-xl-3">
+                    <!-- Desktop Toggles (Visible for XL screens) -->
+                    <div class="d-none d-xl-flex align-items-center gap-3 me-3">
+                        <button class="btn btn-link text-theme p-0" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
                             <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
                         </button>
-                        <button class="btn btn-link text-decoration-none fw-bold" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
-                            <span id="rtlLabel">RTL</span>
+                        <button class="btn btn-link text-theme p-0" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                            <i class="bi bi-translate fs-5"></i>
                         </button>
                     </div>
-                    
-                    <div class="navbar-auth-buttons d-none d-lg-flex gap-2">
-                        <a href="login.html" class="btn btn-primary">Login</a>
-                        <a href="register.html" class="btn btn-outline-primary">Join</a>
+
+                    <div class="d-none d-xl-flex align-items-center gap-2 navbar-cta">
+                        <a href="login.html" class="btn btn-outline-primary">Login</a>
+                        <a href="register.html" class="btn btn-primary">Join</a>
                     </div>
                     
-                    <!-- Hamburger (Visible below 1024px) -->
+                    <!-- Hamburger (Visible for screens <= 1199px) -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#mobileMenu">
                         <i class="bi bi-list fs-4"></i>
@@ -51,9 +51,9 @@ master_header = """
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Home
+                                Home <i class="bi bi-chevron-down ms-1 small"></i>
                             </a>
-                            <ul class="dropdown-menu border-0 shadow-sm" aria-labelledby="homeDropdown">
+                            <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="homeDropdown">
                                 <li><a class="dropdown-item" href="index.html">Home 1</a></li>
                                 <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
                             </ul>
@@ -72,11 +72,11 @@ master_header = """
 
 master_offcanvas = """
     <!-- Mobile Menu Offcanvas -->
-    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas offcanvas-start bg-dark text-theme" tabindex="-1" id="mobileMenu">
         <div class="offcanvas-header pb-0 border-bottom border-secondary border-opacity-25 py-3">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="bi bi-shield-lock me-2 fs-3"></i>
-                <span>Antique Mapping</span>
+                <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
+                <span class="text-theme">Antique Mapping</span>
             </a>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
         </div>
@@ -100,22 +100,30 @@ master_offcanvas = """
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
 
-            <!-- Mobile Toggles -->
-            <div class="offcanvas-toggles border-top border-secondary border-opacity-25 pt-4 mb-4">
-                <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Settings</h6>
-                <div class="d-flex gap-3">
-                    <button class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2" onclick="toggleTheme()" type="button">
-                        <i class="bi bi-moon-fill" id="themeIcon"></i> Theme
-                    </button>
-                    <button class="btn btn-outline-secondary flex-grow-1 d-flex align-items-center justify-content-center gap-2" onclick="toggleRTL()" type="button">
-                        <i class="bi bi-translate"></i> <span id="rtlLabel">RTL</span>
-                    </button>
+            <!-- Mobile Auth Section -->
+            <div class="offcanvas-auth-section border-top border-secondary border-opacity-25 pt-4 mb-3">
+                <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Account</h6>
+                <div class="d-flex flex-column gap-2 mb-3">
+                    <a href="login.html" class="btn btn-outline-secondary justify-content-start d-flex align-items-center gap-2">
+                        <i class="bi bi-person"></i> Login
+                    </a>
+                    <a href="register.html" class="btn btn-primary justify-content-start d-flex align-items-center gap-2">
+                        <i class="bi bi-person-plus text-black"></i> <span class="text-black">Join Network</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="mt-auto pt-4 border-top border-secondary border-opacity-25">
-                <a href="login.html" class="btn btn-primary w-100 mb-2">Login</a>
-                <a href="register.html" class="btn btn-outline-primary w-100">Join</a>
+            <!-- Settings Toggles -->
+            <div class="offcanvas-toggles border-top border-secondary border-opacity-25 pt-4 mb-4">
+                <h6 class="text-uppercase small fw-bold text-secondary ls-2 mb-3">Settings</h6>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleTheme()" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-fill fs-5" id="themeIcon"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;" onclick="toggleRTL()" type="button" aria-label="Toggle RTL">
+                        <i class="bi bi-translate fs-5"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -123,15 +131,16 @@ master_offcanvas = """
 
 master_footer = """
     <!-- Footer -->
-    <footer class="mt-auto">
+    <footer class="mt-auto py-5">
         <div class="container">
-            <div class="row g-5 mb-5 overflow-hidden">
-                <div class="col-lg-4 responsive-center">
+            <div class="row g-5 mb-5 justify-content-center text-center">
+                <!-- Branding and Social -->
+                <div class="col-12">
                     <a class="navbar-brand d-inline-flex align-items-center mb-4" href="index.html">
                         <i class="bi bi-shield-lock me-2 fs-3 text-primary"></i>
-                        <span>Antique Mapping</span>
+                        <span class="text-theme">Antique Mapping</span>
                     </a>
-                    <p class="text-secondary small mb-4">Elite curators and forensic auditors of historical cartography since 2008.</p>
+                    <p class="text-secondary small mb-4 mx-auto" style="max-width: 600px;">Elite curators and forensic auditors of historical cartography since 2008.</p>
                     <div class="d-flex footer-social-icons pt-2 justify-content-center">
                         <a href="#"><i class="bi bi-facebook"></i></a>
                         <a href="#"><i class="bi bi-instagram"></i></a>
@@ -139,46 +148,54 @@ master_footer = """
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-2 offset-lg-1">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">The Firm</h6>
+
+                <!-- Firm Section -->
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">The Firm</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="about.html" class="text-secondary small text-decoration-none transition-smooth link-hover">About Protocol</a></li>
                         <li class="mb-2"><a href="services.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Expert Services</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Intelligence Feed</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-2">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Client Services</h6>
+
+                <!-- Client Services Section -->
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">Client Services</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="contact.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Secure Channel</a></li>
                         <li class="mb-2"><a href="pricing.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Asset Valuation</a></li>
                         <li class="mb-2"><a href="register.html" class="text-secondary small text-decoration-none transition-smooth link-hover">Credential Intake</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-lg-3">
-                    <h6 class="mb-4 fw-bold text-uppercase text-white ls-2">Newsletter</h6>
+
+                <!-- Newsletter Section -->
+                <div class="col-12 col-md-4">
+                    <h6 class="mb-4 fw-bold text-uppercase text-theme ls-2">Newsletter</h6>
                     <p class="text-secondary small mb-4">Subscribe for declassified asset reports.</p>
-                    <div class="input-group">
-                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="EMAIL ADDRESS">
-                        <button class="btn btn-primary px-3 py-2" type="button"><i class="bi bi-send text-black"></i></button>
+                    <div class="input-group mx-auto" style="max-width: 320px;">
+                        <input type="email" class="form-control" placeholder="EMAIL ADDRESS">
+                        <button class="btn btn-primary px-3" type="button"><i class="bi bi-send text-black"></i></button>
                     </div>
                 </div>
             </div>
+
             <hr class="border-secondary opacity-25">
+
+            <!-- Bottom Bar -->
             <div class="row align-items-center py-3">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm. All assets encrypted and secured.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
+                <div class="col-12 text-center">
+                    <p class="mb-3 fs-tiny text-secondary">&copy; 2026 Antique Protocol Firm. All assets encrypted and secured.</p>
                     <ul class="list-inline mb-0 fs-tiny text-secondary">
-                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Privacy_Policy</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Terms_of_Engagement</a></li>
-                        <li class="list-inline-item"><a href="#" class="ms-3 text-secondary text-decoration-none link-hover">Compliance_Matrix</a></li>
+                        <li class="list-inline-item"><a href="#" class="mx-3 text-secondary text-decoration-none link-hover">Privacy_Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="mx-3 text-secondary text-decoration-none link-hover">Terms_of_Engagement</a></li>
+                        <li class="list-inline-item"><a href="#" class="mx-3 text-secondary text-decoration-none link-hover">Compliance_Matrix</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
 """
 
 master_body_script = """
