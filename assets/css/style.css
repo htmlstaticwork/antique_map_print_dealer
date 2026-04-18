@@ -602,9 +602,25 @@ img {
   border-radius: 50% !important;
 }
 
+.btn-outline-primary {
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
 .btn-outline-primary:hover {
   background: var(--accent-color) !important;
   color: var(--btn-text) !important;
+}
+
+/* Ensure Theme & RTL toggles are strictly equal width/height across navbars */
+.rounded-circle[onclick="toggleTheme()"],
+.rounded-circle[onclick="toggleRTL()"] {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .btn-dark {
